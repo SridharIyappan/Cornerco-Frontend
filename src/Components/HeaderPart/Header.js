@@ -2,8 +2,7 @@ import React from 'react'
 import "./HeadCss.css";
 import Group2 from "../../images/Group2.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faUserAlt, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import { faCog, faUserAlt, faShoppingCart, faSearch, faComments } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return (
@@ -27,7 +26,7 @@ const Header = () => {
                <div>Products</div>
                <div>Books</div>
                <div>Health & Wealth</div>
-               <div>Community <span className="Header__Chat">(24/7chat)</span></div>
+               <div>Community <span className="Header__Chat"><FontAwesomeIcon icon={faComments} size = '2x' /></span></div>
                <div>Resources</div>
                <div></div>
           </div>
