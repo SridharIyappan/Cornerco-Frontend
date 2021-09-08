@@ -1,0 +1,93 @@
+
+.Header__OuterDiv{
+display: flex;
+justify-content: space-around;
+align-items: center;
+width: 100vw;
+}
+
+.Header__OuterImage{
+    height: 80px;
+    width: 180px;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.Header__InnerDiv{
+display: flex;
+height: 30px;
+width: 120px;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.Header__IconOuter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.Header__Search{
+    border:none;
+    outline: none;
+    height: 35px;
+    width: 200px;
+    border-radius: 25px;
+}
+
+.Header__Searchout{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 35px;
+    width: 300px;
+    border: 1px solid white;
+    border-radius: 25px;
+    -moz-box-shadow:   2px 2px 4px 5px #ccc;
+  -webkit-box-shadow: 2px 2px 4px 5px #ccc;
+  box-shadow: 2px 2px 4px 5px #ccc;
+}
+
+.Header__SectionOuter{
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: #B8B8B8;
+}
+
+.Header__SectionOuter > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 50px;
+  width:200px;
+ border-right: 1px solid black;
+text-align: center;
+ cursor: pointer;
+}
+
+
+.Header__SectionOuter div:nth-child(1){
+    height: 50px;
+    width:100px;
+}
+
+.Header__SectionOuter div:nth-child(7){
+    height: 50px;
+    width:100px;
+    border:0;
+}
+.Header__Chat{
+    color: red;
+}

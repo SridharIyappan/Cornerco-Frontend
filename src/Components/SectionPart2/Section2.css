@@ -1,0 +1,42 @@
+.Section2__CardImage{
+    border-radius: 10px;
+}
+
+
+.Section2__Cards{
+    width: 70%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Section2__CardMain{
+    border:1px solid white;
+    width: 280px;
+    height: 300px;
+}
+
+.Section2__CardMain > p{
+  font-size: 14px;
+  line-height: 1.3;
+  max-width: 20ch;
+}
+
+.Section2__Main{
+    width: 100%;
+}
+
+.Section2__Heading{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 60px;
+    position: relative;
+}
+
+.Section__HeadingHead{
+position: relative;
+left:25px;
+}
