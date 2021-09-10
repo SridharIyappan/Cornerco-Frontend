@@ -1,6 +1,6 @@
 import React from 'react'
 import "./HeadCss.css";
-import Group2 from "../../images/Group2.png";
+import whiteTextLogo from "../../images/whiteTextLogo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faUserAlt, faShoppingCart, faSearch, faComments } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +8,7 @@ const Header = () => {
     return (
        <div>
             <div className="Header__OuterDiv">
-            <img src={Group2} alt="CornerCo" className="Header__OuterImage" />
+            <img src={whiteTextLogo} alt="CornerCo" className="Header__OuterImage" />
             <div className="Header__Searchout">
                 <div><input type="text" className="Header__Search " placeholder="What are you looking for" /></div>
                 <div><FontAwesomeIcon icon={faSearch} /></div>

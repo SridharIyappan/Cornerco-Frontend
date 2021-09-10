@@ -5,19 +5,19 @@ import "./Section2.css";
 const Card = () => {
     return (
         <div className="Section2__CardMain">
-            <img className="Section2__CardImage" src="https://picsum.photos/140/140" alt="" />
-            <p><b>Women Style Dumbbell</b></p>
-            <p>$ 500 </p>
-            <p>Lorem Ipsum ...</p>
+            <img className="Section2__CardImage" src="https://picsum.photos/240/240" alt="" />
+            <b className="Section2__CardTitle">Women Style Dumbbell</b>
+            <h5><b>$500</b></h5>
+            <p>Lorem Ipsum is simply printing and ...</p>
         </div>
     )
-}
+} 
 
 const Section2 = () => {
     return (
         <div className="Section2__MainPart">
             <div className="Section2__Heading">
-                <h3>Feature Products</h3>
+                <h3><b>Feature Products</b></h3>
                 <p style={{"color":"red","cursor":"pointer"}}>See More Products ></p>
             </div>
             <div className="Section2__Main">

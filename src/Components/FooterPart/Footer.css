@@ -1,0 +1,49 @@
+.Footer__Company,.Footer__About ,.Footer__support ,.Footer__More{
+    height: 200px;
+    width: 250px;
+}
+
+.Footer__Main{
+    height: 250px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.Footer__Inner{
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 70px;
+}
+
+.Footer__Image{
+    height: 70px;
+    width: 200px;
+}
+
+.Footer__Company{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.Footer__Copywrite{
+    height: 30px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Footer__Icons{
+    height: 30px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
