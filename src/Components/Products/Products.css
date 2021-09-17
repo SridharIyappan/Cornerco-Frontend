@@ -1,0 +1,36 @@
+.products {
+    width: 100%;
+    background: #1f1f1f;
+}
+
+.col-2 {
+    width: 12vw;
+    align-items: center !important;
+    vertical-align: middle;
+    justify-items: center;
+    text-align: center;
+}
+
+.col-3 {
+    width: 19vw;
+    align-items: center !important;
+    vertical-align: middle;
+    justify-items: center;
+    text-align: center;
+}
+
+.product-image {
+    width: 80%;
+    vertical-align: middle;
+}
+
+.item-image {
+    width: 60%;
+    vertical-align: middle;
+    max-height: 150px;
+}
+
+hr {
+    width: 100%;
+    color: white;
+}
