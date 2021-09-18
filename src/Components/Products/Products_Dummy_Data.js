@@ -76,7 +76,17 @@ const DUMMY_DATA = [
     },
     {
         image: '../../images/dummy.jpg',
-        name: '1',
+        name: '5',
+        category: 'vitamins'
+    },
+    {
+        image: '../../images/dummy.jpg',
+        name: '4',
+        category: 'vitamins'
+    },
+    {
+        image: '../../images/dummy.jpg',
+        name: '6',
         category: 'sale'
     },
     {

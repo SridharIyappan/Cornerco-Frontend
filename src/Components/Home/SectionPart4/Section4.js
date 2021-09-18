@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Section4.css";
-import adverst from "../../images/adverst.jpg";
-import blogsbanner from "../../images/blogsbanner.jpeg";
+import adverst from "../../../images/adverst.jpg";
+import blogsbanner from "../../../images/blogsbanner.jpeg";
 
 const Sidecard = () => {
     return (

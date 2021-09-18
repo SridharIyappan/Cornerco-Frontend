@@ -1,9 +1,7 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from "./Components/HeaderPart/Header";
-import Section1 from "./Components/SectionPart1/Section1";
-import Section2 from "./Components/SectionPart2/Section2";
-import Section3 from "./Components/SectionPart3/Section3";
-import Section4 from "./Components/SectionPart4/Section4";
+import Header from "./Components/Header/index.js";
+import Home from "./Components/Home/index.js";
 import Products from "./Components/Products/Product";
 import Footer from "./Components/FooterPart/Footer";
 
@@ -12,16 +10,25 @@ import './Components/CSS/Heading/index.css'
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Products />
-     <Section1/>
-     <Section2/>
-     <Section3/>
-     <Section4/>
-     <Footer/>
-    </div>
+     <>
+      <Router>
+        <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/products" component={Products} />
+            {/* <Route path="/blog" component={Blog} />
+            <Route path="/contact" component={Contact} /> */}
+          </Switch>
+        <Footer />
+      </Router>
+    </>
   );
 }
 
 export default App;
+
+
+// <Section1/>
+//      <Section2/>
+//      <Section3/>
+//      <Section4/>

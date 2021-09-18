@@ -1,17 +1,16 @@
-.row-col-5 {
+.row-col-9 {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     grid-gap: 1rem;
-    grid-auto-rows: minmax(20rem, auto);
     text-align: center;
-    padding: 3rem 5rem 5rem 5rem;
+    padding: 3rem 5rem 0rem 5rem;
+    height: fit-content;
 }
 
-.row-col-4 {
+.row-col-6 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 1rem;
-    
     text-align: center;
     padding: 3rem 5rem 5rem 5rem;
 }
@@ -24,20 +23,24 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .row-col-5 {
-        display: grid;
+    .row-col-6 {
+        grid-template-columns: repeat(3, 1fr);
+        justify-self: space-around;
         grid-gap: 1rem;
-        grid-auto-rows:  minmax(10rem, auto);
+        text-align: center;
+        padding: 0 2rem;
+    }
+    .row-col-9 {
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1rem;
         padding: 0 2rem;
     }
     .row-col-4 {
-        display: grid;
         grid-template-columns: repeat(2, 2fr);
         grid-gap: 1rem;
         padding: 2rem 2rem;
     }
     .row-col-2 {
-        display: grid;
         grid-gap: 1rem;
         padding: 2rem 2rem;
     }

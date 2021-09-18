@@ -1,4 +1,6 @@
-import DUMMY_DATA from './Products_Dummy_Data.js'
+import DUMMY_DATA from './Products_Dummy_Data.js';
+
+import Vitamins from './Vitamins'
 
 // ICONS
 import ourpicks from '../../icons/ourpicks.png';
@@ -36,22 +38,22 @@ const products = [
         image: books,
         name: 'Books'
     },
-    // {
-    //     image: supplements,
-    //     name: 'Supplements'
-    // },
-    // {
-    //     image: merchandise,
-    //     name: 'Merchandise'
-    // },
-    // {
-    //     image: cosmetics,
-    //     name: 'Cosmetics'
-    // },
-    // {
-    //     image: fitness,
-    //     name: 'fitness'
-    // }
+    {
+        image: supplements,
+        name: 'Supplements'
+    },
+    {
+        image: merchandise,
+        name: 'Merchandise'
+    },
+    {
+        image: cosmetics,
+        name: 'Cosmetics'
+    },
+    {
+        image: fitness,
+        name: 'fitness'
+    }
 ];
 
 const Products = () => {
@@ -64,9 +66,9 @@ const Products = () => {
         <div className = "products">
             <div className = "row-col-2">
                 <h3 className = "heading-primary">products</h3>
-                <div className = "view-products">See all</div>
+                {/* <div className = "view-products">See all</div> */}
             </div>
-            <div className = "row-col-5">
+            <div className = "row-col-9">
                 {items.map(filteredItem =>
                     <div>
                         <img src = {filteredItem.image} className = "product-image" />
@@ -78,17 +80,10 @@ const Products = () => {
             </div>
             <div className = "row-col-2">
                 <h3 className="heading-secondary">vitamins</h3>
-                <div className = "view-products">See all</div>
+                {/* <div className = "view-products">See all</div> */}
             </div>
-            <div className="row-col-4">
-                {datas.filter(data => data.category === 'vitamins').map(filteredItem =>
-                    <div>
-                        <img src = {Dummy} className = "item-image" />
-                        <div class = "products-sub" >
-                            { filteredItem.name }
-                        </div>
-                    </div> 
-                )}
+            <div className="row-col-6">
+                <Vitamins />
             </div>
             <hr />
         </div>

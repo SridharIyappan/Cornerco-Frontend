@@ -1,7 +1,6 @@
 .products {
-    width: 100%;
+    max-width: 100%;
     background: #1f1f1f;
-    height: 3000px;
 }
 
 .product-image {
@@ -17,8 +16,8 @@
 }
 
 .item-image {
-    width: 240px;
-    border-radius: 25px;
+    width: 80%;
+    border-radius: 5px;
 }
 
 hr {
@@ -28,8 +27,8 @@ hr {
 
 @media only screen and (max-width: 600px) {
     .item-image {
-        width: 100px;
-        border-radius: 25px;
+        width: 80%;
+        border-radius: 5px;
     }
     .view-products {
         font-size: 2rem;
