@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <Header />
-      {/* <Products /> */}
+      <Products />
      <Section1/>
      <Section2/>
      <Section3/>

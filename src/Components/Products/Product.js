@@ -62,21 +62,27 @@ const Products = () => {
 
     return ( 
         <div className = "products">
-            <div className="row">
-                <h3 className="heading-primary">products</h3>
+            <div className = "row-col-2">
+                <h3 className = "heading-primary">products</h3>
+                <div className = "view-products">See all</div>
+            </div>
+            <div className = "row-col-5">
                 {items.map(filteredItem =>
-                    <div className='col-2'>
+                    <div>
                         <img src = {filteredItem.image} className = "product-image" />
-                        <div class = "products-main" >
+                        <div class = "products-name-main" >
                             { filteredItem.name }
                         </div>
                     </div>  
                 )}
             </div>
-            <div className="row">
+            <div className = "row-col-2">
                 <h3 className="heading-secondary">vitamins</h3>
+                <div className = "view-products">See all</div>
+            </div>
+            <div className="row-col-4">
                 {datas.filter(data => data.category === 'vitamins').map(filteredItem =>
-                    <div className='col-3'>
+                    <div>
                         <img src = {Dummy} className = "item-image" />
                         <div class = "products-sub" >
                             { filteredItem.name }

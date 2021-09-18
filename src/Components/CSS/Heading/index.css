@@ -2,14 +2,15 @@
     color: #fefefa;
     text-transform: uppercase;
     backface-visibility: hidden;
-    font-size: 5rem;
-    margin-bottom: 3rem; 
+    font-size: 3rem;
+    align-self: center;
+    justify-self: start;
 }
 
 @media only screen and (max-width: 37.5em) {
 .heading-primary {
     letter-spacing: 1rem;
-    font-size: 5rem; 
+    font-size: 1.5rem; 
     } 
 }
   
@@ -19,7 +20,8 @@
     text-transform: capitalize;
     letter-spacing: .2rem;
     color: #fefefa;
-    padding-bottom: 2rem;
+    align-self: center;
+    justify-self: start;
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -33,21 +35,21 @@
     } 
 }
 
-.products-main {
-    font-size: 1.4rem;
-    font-weight: 700;
+.products-name-main {
+    font-size: 1.5rem;
+    font-weight: 400;
     letter-spacing: .2rem;
-    color: #b8b8b8;
+    color: #fefefa;
 }
 
 @media only screen and (max-width: 37.5em) {
-    .products-main {
-        font-size: 0.8rem; 
+    .products-name-main {
+        font-size: 1rem; 
     } 
 }
 
 .products-sub {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: .2rem;
     color: #fefefa;
