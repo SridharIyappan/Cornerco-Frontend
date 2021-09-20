@@ -47,3 +47,10 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.Footer__Icons i {
+    border: 1px solid #1f1f1f;
+    border-radius: 50%;
+    font-size: 5rem;
+    color: royalblue;
+}

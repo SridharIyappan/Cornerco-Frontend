@@ -11,11 +11,10 @@ const Footer = () => {
            <div className="Footer__Inner">
            <div className="Footer__Company">
                <img src={whiteTextLogo} alt="cornerco" className="Footer__Image"/>
-               <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Etiameu urna a elit pharetra molestie.</p>
            </div>
            <div className="Footer__About">
               <ul>
-              <h5><b>About</b></h5>
+              <h5>About</h5>
               <li>About Corner</li>
                <li>Privacy policy</li>
                <li>Terms of Service</li>

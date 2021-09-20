@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./HeadCss.css";
@@ -18,12 +17,13 @@ const PcHeader = () => {
             <img src={whiteTextLogo} alt="CornerCo" className="Header__OuterImage" />
             <div className="Header__Searchout">
                 <div><input type="text" className="Header__Search " placeholder="What are you looking for" /></div>
-                <div><FontAwesomeIcon icon={faSearch} /></div>
+                <div className = "input-search-ic" ><FontAwesomeIcon icon={faSearch} /></div>
             </div>
             <div className="Header__InnerDiv">
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faCog} /></div>
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faUserAlt} /></div>
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faShoppingCart} /></div>
+                <div className="Header__IconOuter"><i class="fa fa-heart" aria-hidden="true"></i></div>
             </div>
         </div>
 

@@ -22,7 +22,7 @@ height: 90px;
 .Header__InnerDiv{
 display: flex;
 height: 30px;
-width: 120px;
+width: 180px;
 justify-content: space-evenly;
 align-items: center;
 }
@@ -41,21 +41,25 @@ align-items: center;
     border:none;
     outline: none;
     height: 35px;
-    width: 200px;
+    width: 400px;
     border-radius: 25px;
+    font-size: 1.5rem;
+    color: gray;
 }
-
+::placeholder {
+    color: gray;
+}
 .Header__Searchout{
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 35px;
-    width: 300px;
+    width: 50%;
     border: 1px solid white;
     border-radius: 25px;
-    /* -moz-box-shadow:   2px 2px 4px 5px #ccc;
-  -webkit-box-shadow: 2px 2px 4px 5px #ccc; */
-  box-shadow: 1px 1px 3px 4px #ccc;
+   /* -moz-box-shadow:   2px 2px 4px 5px #ccc;
+   -webkit-box-shadow: 2px 2px 4px 5px #ccc; */
+    box-shadow: 1px 1px 3px 4px #ccc;
 }
 
 .Header__SectionOuter{
@@ -63,7 +67,7 @@ align-items: center;
     width: 100vw;
     justify-content: space-around;
     align-items: center;
-    /* height: 50px; */
+    height: 50px; 
     background-color: #f2f2f2;
 }
 
@@ -79,6 +83,16 @@ align-items: center;
     cursor: pointer;
 }
 
+.nav-links:hover {
+    color: #ed2939;
+  }
+  
+  .nav-links:hover:after {
+    width: 100%;
+    bottom: 40px;
+    background: #ed2939;
+  }
+  
 .active {
     color: #ed2939;
     border-bottom: 2px solid #ed2939
@@ -98,4 +112,10 @@ align-items: center;
 .Header__Chat{
     color: red;
     padding: 10px;
+}
+
+.input-search-ic {
+    position: relative;
+    left: 1rem;
+    font-size: 2rem;
 }

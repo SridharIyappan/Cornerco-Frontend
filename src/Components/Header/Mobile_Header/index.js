@@ -72,7 +72,9 @@ function MobileHeader() {
                 onClick={handleClick}
               >
                 Community
-                <FontAwesomeIcon icon={faComments} size = '1x' />
+                <span className="header__chat">
+                        <FontAwesomeIcon icon={faComments} size = '2x' />
+                    </span>
               </NavLink>
             </li>
             <li className="nav-item">
@@ -99,6 +101,7 @@ function MobileHeader() {
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faCog} /></div>
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faUserAlt} /></div>
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faShoppingCart} /></div>
+                <div className="Header__IconOuter"><i class="fa fa-heart" aria-hidden="true"></i></div>
         </div>
       </nav>
     </>

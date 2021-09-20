@@ -16,6 +16,8 @@ import fitness from '../../icons/fitness.png';
 
 import Dummy from '../../images/dummy.jpg';
 import './Products.css';
+import Oils from './Oils/index.js';
+import Books from './Books/index.js';
 
 const products = [
     {
@@ -84,6 +86,22 @@ const Products = () => {
             </div>
             <div className="row-col-6">
                 <Vitamins />
+            </div>
+            <hr />
+            <div className = "row-col-2">
+                <h3 className="heading-secondary">Essential Oils</h3>
+                {/* <div className = "view-products">See all</div> */}
+            </div>
+            <div className="row-col-6">
+                <Oils />
+            </div>
+            <hr />
+            <div className = "row-col-2">
+                <h3 className="heading-secondary">Books</h3>
+                {/* <div className = "view-products">See all</div> */}
+            </div>
+            <div className="row-col-6">
+                <Books />
             </div>
             <hr />
         </div>
