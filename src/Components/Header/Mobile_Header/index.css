@@ -109,6 +109,8 @@
       max-width: 100px;
       float: left;
       margin: 0;
+      position: relative;
+      left: 2rem;
     }
     .nav-menu {
       display: flex;
@@ -159,7 +161,7 @@
       transform: translate(-100%, 60%);
       font-size: 3.8rem;
       cursor: pointer;
-      color: #1f1f1f;;
+      color: #1f1f1f;
     }
     .header__chat {
       font-size: 1rem;
@@ -167,5 +169,13 @@
     }
     .Header__Search {
       width: 180px !important;
+    }
+    .header-searchout {
+      position: relative;
+      left: 2rem;
+    }
+    .Header__InnerDiv {
+      position: relative;
+      left: 1.5rem
     }
   }

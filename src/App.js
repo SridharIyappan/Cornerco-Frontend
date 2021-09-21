@@ -9,20 +9,25 @@ import './Components/CSS/Responsive/index.css'
 import './Components/CSS/Heading/index.css'
 import Checkout from "./Components/CheckOut/index.js";
 import SingeleProduct from "./Components/Products/Singleproduct/index.js";
+import Vitamins from "./Components/Products/ProductList/Vitamins/index.js";
+import EssentialOils from "./Components/Products/ProductList/Oils/index.js";
+import Books from "./Components/Products/ProductList/Books/index.js";
+import Cart from "./Components/Cart/index.js";
 
 function App() {
   return (
      <>
       <Router>
         <Header />
-        {/* <Navbar /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/products" component={Products} />
             <Route path = "/checkout" component = {Checkout} />
             <Route path = "/single" component = {SingeleProduct} />
-            {/* <Route path="/blog" component={Blog} />
-            <Route path="/contact" component={Contact} /> */}
+            <Route path = "/product-vitamins" component = {Vitamins} />
+            <Route path = "/product-essential-oils" component ={EssentialOils} />
+            <Route path = "/product-books" component ={Books} />
+            <Route path = "/cart" component ={Cart} />
           </Switch>
         <Footer />
       </Router>

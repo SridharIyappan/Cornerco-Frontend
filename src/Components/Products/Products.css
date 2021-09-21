@@ -65,39 +65,9 @@ hr {
     color: white;
 }
 
-.add-to-cart {
-    background: #ed2939;
-    width: 85%;
-    height: 36px;
+.view-products i {
     color: #fefefa;
-    border-radius: 18px;
-    font-size: 1.6rem;
-    border: none;
-    /* -webkit-transform: rotate(-90deg); */
-}
-
-.minus {
-    float: left;
-    width: 20%;
-    height: 36px;
-    border: none;
-    border-radius: 5px;
-    font-size: 2rem;
-}
-
-.plus {
-    float: right;
-    width: 20%;
-    height: 36px;
-    border: none;
-    border-radius: 5px;
-    font-size: 2rem;
-}
-
-.text {
-    font-size: 1.6rem; 
-    position: relative;
-    top: 6px;
+    font-size: 4rem;
 }
 
 @media only screen and (max-width: 600px) {
