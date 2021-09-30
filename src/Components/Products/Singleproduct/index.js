@@ -41,8 +41,9 @@ const SingeleProduct = () => {
                 </div>
                 <div className = "large-images" >
                     <img src = {shownImage} className = "display-image" />
-                    <h3>$ {cost}</h3>
                 </div>
+                <h3 className = "single-product-cost" >$ {cost}</h3>
+                <h3 className = "single-product-discount-cost" >$ 13.99</h3>
                 <div className = "content">
                     <div>
                         <h4>Description</h4>

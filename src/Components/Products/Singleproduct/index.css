@@ -38,13 +38,18 @@
 }
 
 .large-images {
-    grid-column: 2/3;
+    grid-column: 2/4;
     grid-row: 1;
     position: relative;
+    overflow: hidden;
+    width: fit-content;
 }
 .content {
-    grid-column: 3/5;
+    grid-column: 4/6;
     grid-row: 1;
+    position: relative;
+    right: 6rem;
+    top: 1rem;
 }
 
 .small-images {
@@ -54,17 +59,18 @@
 
 .display-image {
     width: 370px;
+    height: 370px;
     border-radius: 10%;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s linear;
-    transition: .3s linear;
+    transition: .8s linear;
     border: none;
 }
 
 .display-image:hover {
     -webkit-transform: scale(1.3);
-    transform: scale(1.1);
+    transform: scale(1.4);
 }
 
 .small-images div img {
@@ -83,12 +89,20 @@
     font-size: 1.5rem;
 }
 
-.large-images h3{ 
-    position: absolute;
-    left: 45%;
-    top: 100%;
+.single-product-cost{ 
     color: #fefefa;
-    font-size: 1.5rem;
+    font-size: 3.0rem;
+    position: relative;
+    left: 36rem;
+    text-decoration: line-through;
+}
+
+.single-product-discount-cost {
+    color: #ed2939;
+    font-size: 3.0rem;
+    font-weight: 600;
+    position: relative;
+    left: 18rem;
 }
 
 .content div button {
@@ -127,16 +141,29 @@
         grid-row: 2;
         position: relative;
         left: 2rem;
-        top: 1rem
+        top: 7rem
     }
     
    .display-image {
         width: 230px;
+        height: 230px;
     }
 
     .content div button {
         width: 250px;
         left: 18%;
+    }
+
+    .single-product-discount-cost {
+        position: relative;
+        left: -9rem;
+        right: 10rem;
+    }
+    .single-product-cost{ 
+        position: relative;
+        left: -19rem;
+        top: 237px;
+        right: 1rem;
     }
 
 }

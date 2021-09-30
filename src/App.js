@@ -13,13 +13,17 @@ import Vitamins from "./Components/Products/ProductList/Vitamins/index.js";
 import EssentialOils from "./Components/Products/ProductList/Oils/index.js";
 import Books from "./Components/Products/ProductList/Books/index.js";
 import Cart from "./Components/Cart/index.js";
+import Login from "./Components/Login/index.js";
+import Regiester from "./Components/Register/index.js";
 
 function App() {
   return (
      <>
       <Router>
-        <Header />
+        {/* <Header /> */}
           <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Regiester} />
             <Route exact path="/" component={Home} />
             <Route path="/products" component={Products} />
             <Route path = "/checkout" component = {Checkout} />
@@ -29,7 +33,7 @@ function App() {
             <Route path = "/product-books" component ={Books} />
             <Route path = "/cart" component ={Cart} />
           </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   );

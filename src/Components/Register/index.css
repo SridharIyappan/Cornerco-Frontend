@@ -1,0 +1,135 @@
+.Register {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: hidden;
+}
+
+.Register .left {
+    position: relative;
+    left: 5rem;
+    top: 5rem
+}
+
+.Register .left h2{
+    position: relative;
+    top: 3rem;
+    font-size: 3rem;
+    font-weight: 600;
+    color: rgb(85, 82, 82);
+}
+
+.Register .left p{
+    position: relative;
+    top: 3rem;
+    font-size: 1.5rem;
+    color: #b8b8b8;
+}
+
+.Register .left form {
+    position: relative;
+    top: 3rem;
+    width: 80%;
+}
+
+.Register .left label {
+    width: 100%;
+}
+
+.Register .left label {
+    font-size: 1.8rem;
+    position: relative;
+    padding-top: 1rem;
+    color: #b8b8b8;
+}
+
+.Register .left form {
+    padding: 0;
+}
+
+.Register .left form .register-input {
+    border: 1px solid #b8b8b8;
+    height: 3rem;
+    width: 94%;
+    font-size: 1.6rem;
+    padding-left: 1.5rem;
+}
+
+.Register .left form i {
+    position: relative;
+    right: 2.5rem;
+    top: 0.3rem;
+    font-size: 2rem;
+    color: #b8b8b8;
+}
+
+
+.Register .left form .register-form{
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: linear-gradient(0deg, #dd343a 25%, #e0323e 25%, #ed2939 50%);
+    color: #fefefa;
+    font-size: 18px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    width: 95%;
+}
+
+.Register .left form h4 {
+    position: relative;
+    left: 3rem;
+    top: 1rem;
+}
+
+.Register .left form h4 span {
+    color: #666060;
+}
+
+.Register .left a {
+    color: black;
+    text-decoration: none;
+}
+
+.Register .left h3 {
+    position: relative;
+    top: 18rem;
+    left: 15rem;
+}
+
+.Register .left h3 span{
+    color: #b8b8b8;
+}
+
+.Register .right {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: linear-gradient(0deg, #dd343a 25%, #e0323e 25%, #ed2939 50%);
+    height: 100vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.Register .right img{
+    width: 40%;
+    position: relative;
+    top: 3rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .Register {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .Register .left {
+        height: 60rem;
+    }
+    .Register .left h3 {
+        position: relative;
+        top: 8rem;
+        left: 8rem;
+    }
+}
+

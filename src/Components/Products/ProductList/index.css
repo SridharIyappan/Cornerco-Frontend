@@ -78,6 +78,22 @@
     text-transform: capitalize;
 }
 
+.i-heart {
+    font-size: 2.5rem;
+    color: #454545;
+    position: relative;
+    bottom: 7.5rem;
+    right: 3rem;
+}
+
+.i-fav-heart {
+    font-size: 2.5rem;
+    color: red;
+    position: relative;
+    bottom: 7.5rem;
+    right: 3rem;
+}
+
 @media only screen and (max-width: 600px) {
 
     .product-grid {

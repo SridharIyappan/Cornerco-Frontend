@@ -46,12 +46,16 @@ const items = [
 const Vitamins = () => {
 
     const [cartButton, setCartButton] = useState(true);
+    const [favoriteIcon, setFavoriteIcon] = useState(false);
     const [cartValue, setCartValue] = useState(0);
 
-// const text = 
 
 const onClickCart = () => {
     setCartButton(false);
+}
+
+const onClickFavoriteIcon = () => {
+    setFavoriteIcon(!favoriteIcon);
 }
 
 const onClickAdd = () => {
@@ -69,6 +73,10 @@ const onClickMinus = () => {
                     {items.map(item =>
                         <div>
                             <img src = {item.image} className = "product-list-image" />
+                            <i className = {favoriteIcon ? "fa fa-heart i-fav-heart" : "fa fa-heart-o i-heart" }
+                               onClick = { onClickFavoriteIcon }
+                               >
+                            </i>
                             <div class = "product-list-name" >
                                 { item.name }
                             </div>
