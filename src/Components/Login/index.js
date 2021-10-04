@@ -94,7 +94,7 @@ const Login = () => {
                 </form>
                 <h3><span>Don't have an account?</span> 
                     <NavLink exact to = '/register'>
-                        Regiester 
+                        Register 
                     </NavLink>
                 </h3>
             </div>

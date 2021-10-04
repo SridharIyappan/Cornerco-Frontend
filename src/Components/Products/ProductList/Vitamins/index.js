@@ -1,5 +1,7 @@
 // import DUMMY_DATA from './Products_Dummy_Data.js';
 import { useState } from 'react';
+import { connect } from 'react-redux';
+
 import one from '../../../../images/Vitamins/1.jpeg';
 import two from '../../../../images/Vitamins/2.jpeg';
 import three from '../../../../images/Vitamins/3.jpeg';
@@ -99,5 +101,6 @@ const onClickMinus = () => {
         </div>
      );
 }
+
  
 export default Vitamins;

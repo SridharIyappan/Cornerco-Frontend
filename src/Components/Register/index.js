@@ -54,7 +54,7 @@ const Regiester = () => {
             <div className = "left">
                 <img src = {whiteTextLogo} />
                 <h2>Welcome</h2>
-                <form onSubmit = {registerSubmit} >
+                <form onSubmit = {registerSubmit} encType = 'multipart/form-data' >
                     <label>Username</label>
                         <input 
                             type = "text" 

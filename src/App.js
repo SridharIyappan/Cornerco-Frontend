@@ -16,9 +16,12 @@ import Cart from "./Components/Cart/index.js";
 import Login from "./Components/Login/index.js";
 import Regiester from "./Components/Register/index.js";
 
+import {Provider} from 'react-redux';
+import store from "./Components/Redux/store.js";
+
 function App() {
   return (
-     <>
+     <Provider store = {store}>
       <Router>
         {/* <Header /> */}
           <Switch>
@@ -35,7 +38,7 @@ function App() {
           </Switch>
         {/* <Footer /> */}
       </Router>
-    </>
+    </Provider>
   );
 }
 
