@@ -1,73 +1,60 @@
-import { useState } from 'react';
+// import DUMMY_DATA from './Products_Dummy_Data.js';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
 
-import one from '../../../../images/Essential-Oils/1.jpeg';
-import two from '../../../../images/Essential-Oils/2.jpeg';
-import three from '../../../../images/Essential-Oils/3.jpeg';
-import four from '../../../../images/Essential-Oils/4.jpeg';
-import five from '../../../../images/Essential-Oils/5.jpeg';
-import six from '../../../../images/Essential-Oils/6.png';
-
-import '../index.css';
-
-const items = [
-    {
-        image: one,
-        name: '1'    
-    },
-    {
-        image: two,
-        name: '2'    
-    },
-    {
-        image: three,
-        name: '3'    
-    },
-    {
-        image: four,
-        name: '4'    
-    },
-    {
-        image: five,
-        name: '5'    
-    },
-    {
-        image: six,
-        name: '6'    
-    }
-];
-
-
+import '../index.css'
 
 const EssentialOils = () => {
+
+    const [productData, setProductData] = useState([]);
     const [cartButton, setCartButton] = useState(true);
+    const [favoriteIcon, setFavoriteIcon] = useState(false);
     const [cartValue, setCartValue] = useState(0);
 
-// const text = 
+    const url = 'http://18.223.43.173:3001/api/products';
 
-const onClickCart = () => {
-    setCartButton(false);
-}
+    useEffect(async() => {
+        try {
+            const products = await axios.get(url);
+            setProductData(products.data);
+        }catch(err) {
+            console.log(err);
+        } 
+    },[url]);
 
-const onClickAdd = () => {
-    setCartValue(cartValue + 1);
-}
+    const onClickCart = () => {
+        setCartButton(false);
+    }
 
-const onClickMinus = () => {
-    setCartValue(cartValue - 1);
-}
+    const onClickFavoriteIcon = () => {
+        setFavoriteIcon(!favoriteIcon);
+    }
+
+    const onClickAdd = () => {
+        setCartValue(cartValue + 1);
+    }
+
+    const onClickMinus = () => {
+        setCartValue(cartValue - 1);
+    }
 
     return (
         <div className = "Products">
             <h3 className="product-list-heading">Essential Oils</h3>
             <div className = "product-grid">
-                    {items.map(item =>
+                    {productData.filter(item => item.category === 'oil').map(filteredItem => (
                         <div>
-                            <img src = {item.image} className = "product-list-image" />
+                            <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "product-list-image" />
+                            <i className = {favoriteIcon ? "fa fa-heart i-fav-heart" : "fa fa-heart-o i-heart" }
+                               onClick = { onClickFavoriteIcon }
+                               >
+                            </i>
                             <div class = "product-list-name" >
-                                { item.name }
+                                { filteredItem.productName }
                             </div>
                             <div class = "product-list-price" >
-                                $ { item.price }
+                                $ { filteredItem.mrp }
                             </div>
                             <button className = "add-to-cart" 
                                     onClick = {onClickCart} >
@@ -80,10 +67,11 @@ const onClickMinus = () => {
                                         }
                             </button>
                         </div> 
-                    )}
+                    ))}
             </div>
         </div>
      );
 }
+
  
 export default EssentialOils;

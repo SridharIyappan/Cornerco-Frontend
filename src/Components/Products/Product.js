@@ -1,5 +1,5 @@
-import DUMMY_DATA from './Products_Dummy_Data.js';
-
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 
 // ICONS
@@ -12,31 +12,6 @@ import supplements from '../../icons/supplements.png';
 import merchandise from '../../icons/merchandise.png';
 import cosmetics from '../../icons/cosmetics.png';
 import fitness from '../../icons/fitness.png';
-
-
-//VITAMINS IMAGES
-import vitaminsone from '../../images/Vitamins/1.jpeg';
-import vitaminstwo from '../../images/Vitamins/2.jpeg';
-import vitaminsthree from '../../images/Vitamins/3.jpeg';
-import vitaminsfour from '../../images/Vitamins/4.jpeg';
-import vitaminsfive from '../../images/Vitamins/5.jpeg';
-import vitaminssix from '../../images/Vitamins/6.jpeg';
-
-//Oils Images
-import oilsone from '../../images/Essential-Oils/1.jpeg';
-import oilstwo from '../../images/Essential-Oils/2.jpeg';
-import oilsthree from '../../images/Essential-Oils/3.jpeg';
-import oilsfour from '../../images/Essential-Oils/4.jpeg';
-import oilsfive from '../../images/Essential-Oils/5.jpeg';
-import oilssix from '../../images/Essential-Oils/6.png';
-
-//Books Images
-import booksone from '../../images/Books/1.jpeg';
-import bookstwo from '../../images/Books/2.jpeg';
-import booksthree from '../../images/Books/3.jpeg';
-import booksfour from '../../images/Books/4.jpeg';
-import booksfive from '../../images/Books/5.png';
-import bookssix from '../../images/Books/6.jpeg';
 
 import './Products.css';
 
@@ -79,90 +54,20 @@ const products = [
     }
 ];
 
-const vitaminsProduct = [
-    {
-        image: vitaminsone,
-        name: '1'    
-    },
-    {
-        image: vitaminstwo,
-        name: '2'    
-    },
-    {
-        image: vitaminsthree,
-        name: '3'    
-    },
-    {
-        image: vitaminsfour,
-        name: '4'    
-    },
-    {
-        image: vitaminsfive,
-        name: '5'    
-    },
-    {
-        image: vitaminssix,
-        name: '6'    
-    }
-];
-
-const oilsProduct = [
-    {
-        image: oilsone,
-        name: '1'    
-    },
-    {
-        image: oilstwo,
-        name: '2'    
-    },
-    {
-        image: oilsthree,
-        name: '3'    
-    },
-    {
-        image: oilsfour,
-        name: '4'    
-    },
-    {
-        image: oilsfive,
-        name: '5'    
-    },
-    {
-        image: oilssix,
-        name: '6'    
-    }
-];
-
-const booksProduct = [
-    {
-        image: booksone,
-        name: '1'    
-    },
-    {
-        image: bookstwo,
-        name: '2'    
-    },
-    {
-        image: booksthree,
-        name: '3'    
-    },
-    {
-        image: booksfour,
-        name: '4'    
-    },
-    {
-        image: booksfive,
-        name: '5'    
-    },
-    {
-        image: bookssix,
-        name: '6'    
-    }
-];
-
-
-
 const Products = () => {
+
+    const[productData, setProductData] = useState([]);
+
+    const url = 'http://18.223.43.173:3001/api/products';
+
+    useEffect(async() => {
+        try {
+            const products = await axios.get(url);
+            setProductData(products.data);
+        }catch(err) {
+            console.log(err);
+        } 
+    },[url]);
 
     const items = products;
 
@@ -191,14 +96,15 @@ const Products = () => {
                 </div>
             </div>
             <div className="row-col-6">
-                {vitaminsProduct.map(item =>
+                {productData.filter(item => item.category === 'vitamins').map(filteredItem => (
                     <div>
-                        <img src = {item.image} className = "item-image" />
+                        <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "item-image" />
                         <div class = "products-sub" >
-                            { item.name }
+                            { filteredItem.productName }
                         </div>
                     </div> 
-                )}
+                ))
+                }
             </div>
             <hr />
             <div className = "row-col-2">
@@ -210,14 +116,15 @@ const Products = () => {
                 </div>
             </div>
             <div className="row-col-6">
-                {oilsProduct.map(item =>
+                {productData.filter(item => item.category === 'oil').map(filteredItem => (
                     <div>
-                        <img src = {item.image} className = "item-image" />
+                        <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "item-image" />
                         <div class = "products-sub" >
-                            { item.name }
+                            { filteredItem.productName }
                         </div>
                     </div> 
-                )}
+                ))
+                }
             </div>
             <hr />
             <div className = "row-col-2">
@@ -229,14 +136,15 @@ const Products = () => {
                 </div>
             </div>
             <div className="row-col-6">
-                {booksProduct.map(item =>
+                {productData.filter(item => item.category === 'book').map(filteredItem => (
                     <div>
-                        <img src = {item.image} className = "item-image" />
+                        <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "item-image" />
                         <div class = "products-sub" >
-                            { item.name }
+                            { filteredItem.productName }
                         </div>
                     </div> 
-                )}
+                ))
+                }
             </div>
             <hr />
         </div>

@@ -35,7 +35,7 @@ const Regiester = () => {
             try {
                 await axios({
                     method: 'post',
-                    url: 'http://localhost:3001/api/users',
+                    url: 'http://18.223.43.173:3001/api/users',
                     data: {
                         userName: userName,
                         password: password,

@@ -1,89 +1,60 @@
 // import DUMMY_DATA from './Products_Dummy_Data.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
-
-import one from '../../../../images/Vitamins/1.jpeg';
-import two from '../../../../images/Vitamins/2.jpeg';
-import three from '../../../../images/Vitamins/3.jpeg';
-import four from '../../../../images/Vitamins/4.jpeg';
-import five from '../../../../images/Vitamins/5.jpeg';
-import six from '../../../../images/Vitamins/6.jpeg';
 
 import '../index.css'
 
-const items = [
-    {
-        image: one,
-        name: '1' ,
-        price: 29.9   
-    },
-    {
-        image: two,
-        name: '2',
-        price: 29.9    
-    },
-    {
-        image: three,
-        name: '3' ,
-        price: 29.9   
-    },
-    {
-        image: four,
-        name: '4' ,
-        price: 29.9   
-    },
-    {
-        image: five,
-        name: '5',
-        price: 29.9    
-    },
-    {
-        image: six,
-        name: '6' ,
-        price: 29.9   
-    }
-];
-
-
 const Vitamins = () => {
 
+    const [productData, setProductData] = useState([]);
     const [cartButton, setCartButton] = useState(true);
     const [favoriteIcon, setFavoriteIcon] = useState(false);
     const [cartValue, setCartValue] = useState(0);
 
+    const url = 'http://18.223.43.173:3001/api/products';
 
-const onClickCart = () => {
-    setCartButton(false);
-}
+    useEffect(async() => {
+        try {
+            const products = await axios.get(url);
+            setProductData(products.data);
+        }catch(err) {
+            console.log(err);
+        } 
+    },[url]);
 
-const onClickFavoriteIcon = () => {
-    setFavoriteIcon(!favoriteIcon);
-}
+    const onClickCart = () => {
+        setCartButton(false);
+    }
 
-const onClickAdd = () => {
-    setCartValue(cartValue + 1);
-}
+    const onClickFavoriteIcon = () => {
+        setFavoriteIcon(!favoriteIcon);
+    }
 
-const onClickMinus = () => {
-    setCartValue(cartValue - 1);
-}
+    const onClickAdd = () => {
+        setCartValue(cartValue + 1);
+    }
+
+    const onClickMinus = () => {
+        setCartValue(cartValue - 1);
+    }
 
     return (
         <div className = "Products">
             <h3 className="product-list-heading">vitamins</h3>
             <div className = "product-grid">
-                    {items.map(item =>
+                    {productData.filter(item => item.category === 'vitamins').map(filteredItem => (
                         <div>
-                            <img src = {item.image} className = "product-list-image" />
+                            <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "product-list-image" />
                             <i className = {favoriteIcon ? "fa fa-heart i-fav-heart" : "fa fa-heart-o i-heart" }
                                onClick = { onClickFavoriteIcon }
                                >
                             </i>
                             <div class = "product-list-name" >
-                                { item.name }
+                                { filteredItem.productName }
                             </div>
                             <div class = "product-list-price" >
-                                $ { item.price }
+                                $ { filteredItem.mrp }
                             </div>
                             <button className = "add-to-cart" 
                                     onClick = {onClickCart} >
@@ -96,7 +67,7 @@ const onClickMinus = () => {
                                         }
                             </button>
                         </div> 
-                    )}
+                    ))}
             </div>
         </div>
      );

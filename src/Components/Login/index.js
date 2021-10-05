@@ -34,7 +34,7 @@ const Login = () => {
     const loginSubmit = async (e) => {
         e.preventDefault();
         try {
-            const login = await axios.get('http://localhost:3001/api/users');
+            const login = await axios.get('http://18.223.43.173:3001/api/users');
             const loginData = login.data;
             loginData.map((log) =>{
                 if(log.email === loginEmail && log.password === loginPassword) {
