@@ -36,7 +36,9 @@ const Books = () => {
     }
 
     const onClickMinus = () => {
-        setCartValue(cartValue - 1);
+        if(cartValue !== 0) {
+            setCartValue(cartValue - 1);
+        }
     }
 
     return (

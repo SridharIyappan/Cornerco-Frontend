@@ -73,5 +73,10 @@ const Vitamins = () => {
      );
 }
 
+const mapStateToProps = state => {
+    return {
+        porducts: state.cart.porducts
+    };
+};
  
-export default Vitamins;
+export default connect(mapStateToProps)(Vitamins);
