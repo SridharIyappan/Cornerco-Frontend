@@ -22,10 +22,10 @@ const Footer = () => {
                 <p>© 2021 Cornerco™. All rights reserved.</p>
             </div>
             <div className = "footer-icon">
-                <i class="fab fa-facebook i-fb" aria-hidden="true"></i>
-                <i class="fab fa-twitter i-tw"></i>
-                <i class="fab fa-linkedin i-lin" aria-hidden="true"></i>
-                <i class="fab fa-instagram i-in"></i>
+                <i className="fab fa-facebook i-fb" aria-hidden="true"></i>
+                <i className="fab fa-twitter i-tw"></i>
+                <i className="fab fa-linkedin i-lin" aria-hidden="true"></i>
+                <i className="fab fa-instagram i-in"></i>
             </div>
         </div>
      );

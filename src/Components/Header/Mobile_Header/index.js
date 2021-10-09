@@ -101,7 +101,7 @@ function MobileHeader() {
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faCog} /></div>
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faUserAlt} /></div>
                 <div className="Header__IconOuter"><FontAwesomeIcon icon={faShoppingCart} /></div>
-                <div className="Header__IconOuter"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                <div className="Header__IconOuter"><i className="fa fa-heart" aria-hidden="true"></i></div>
         </div>
       </nav>
     </>

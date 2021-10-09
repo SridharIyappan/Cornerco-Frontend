@@ -1,27 +1,16 @@
-// import DUMMY_DATA from './Products_Dummy_Data.js';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { connect } from 'react-redux';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import '../index.css'
 
 const Books = () => {
 
-    const [productData, setProductData] = useState([]);
+    const reduxProduct = useSelector((state) => state.cart.products);
+    
+    const productData = reduxProduct;
     const [cartButton, setCartButton] = useState(true);
     const [favoriteIcon, setFavoriteIcon] = useState(false);
     const [cartValue, setCartValue] = useState(0);
-
-    const url = 'http://18.223.43.173:3001/api/products';
-
-    useEffect(async() => {
-        try {
-            const products = await axios.get(url);
-            setProductData(products.data);
-        }catch(err) {
-            console.log(err);
-        } 
-    },[url]);
 
     const onClickCart = () => {
         setCartButton(false);
@@ -47,15 +36,15 @@ const Books = () => {
             <div className = "product-grid">
                     {productData.filter(item => item.category === 'book').map(filteredItem => (
                         <div>
-                            <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "product-list-image" />
+                            <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "product-list-image" alt = { filteredItem.productName } />
                             <i className = {favoriteIcon ? "fa fa-heart i-fav-heart" : "fa fa-heart-o i-heart" }
                                onClick = { onClickFavoriteIcon }
                                >
                             </i>
-                            <div class = "product-list-name" >
+                            <div className = "product-list-name" >
                                 { filteredItem.productName }
                             </div>
-                            <div class = "product-list-price" >
+                            <div className = "product-list-price" >
                                 $ { filteredItem.mrp }
                             </div>
                             <button className = "add-to-cart" 

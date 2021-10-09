@@ -27,10 +27,10 @@ const Footer = () => {
         <div className="Footer__Copywrite">
             <p>© 2021 Cornerco™. All rights reserved.</p>
             <div className="Footer__Icons">
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-instagram-square"></i>
+            <i className="fab fa-facebook-square"></i>
+            <i className="fab fa-twitter-square"></i>
+            <i className="fab fa-linkedin"></i>
+            <i className="fab fa-instagram-square"></i>
             </div>
         </div>
         </div>

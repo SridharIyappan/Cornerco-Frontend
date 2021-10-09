@@ -1,73 +1,156 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import one from '../../../images/Vitamins/1.jpeg';
-import two from '../../../images/Vitamins/2.jpeg';
-import three from '../../../images/Vitamins/3.jpeg';
-import four from '../../../images/Vitamins/4.jpeg';
+import axios from "axios";
 
-import './index.css';
+import one from "../../../images/Vitamins/1.jpeg";
+import two from "../../../images/Vitamins/2.jpeg";
+import three from "../../../images/Vitamins/3.jpeg";
+import four from "../../../images/Vitamins/4.jpeg";
+
+import "./index.css";
+import { addToCart, removeFromCart } from "../../Redux/reduxCart/cartActions";
 
 const SingeleProduct = () => {
+  const reduxParam = useSelector((state) => state.cart.param);
+  const reduxCartQty = useSelector((state) => state.cart.cart);
+  const dispatch = useDispatch();
+  const [singleProduct, setSingleProduct] = useState([]);
+  const [cartButton, setCartButton] = useState(false);
+  const [cartValue, setCartValue] = useState(0);
+  const [shownImage, setShownImage] = useState(four);
+  const url = `http://localhost:3001/api/products/${reduxParam}`;
 
-    const[shownImage, setShownImage] = useState(four);
-    const[cost, setCost] = useState(19.9);
+  useEffect(() => {
+    fetchSingleProductAPI();
+    
+    // reduxCartQty.filter(quantity => {
+    //   const check = (singleProduct._id === quantity._id);
+    //   console.log(quantity.qty));
+    // }
+      
+  }, [reduxCartQty]);
 
-    const imageChangeOne = () => {
-        setShownImage(one);
-        
+  const fetchSingleProductAPI = async () => {
+    try {
+      const apiData = await axios.get(url);
+      setSingleProduct(apiData.data);
+    } catch (err) {
+      console.log(err);
+      console.log("apierror");
     }
+  };
 
-    const imageChangeTwo = () => {
-        setShownImage(two);
-        
-    }
+  const imageChangeOne = () => {
+    setShownImage(one);
+  };
 
-    const imageChangeThree = () => {
-        setShownImage(three);
-        
-    }
+  const imageChangeTwo = () => {
+    setShownImage(two);
+  };
 
+  const imageChangeThree = () => {
+    setShownImage(three);
+  };
 
-    return ( 
-        <div className = "Single-product">
-            <h2 className = "capsule-name" >Capsule Name</h2>
-            <div className = "single-product-grid">
-                <div className = "small-images" >
-                    <div>
-                        <img src = {one} value = {one} onClick = {imageChangeOne} className = "side-image-1" />
-                        <img src = {two} value = {two} onClick = {imageChangeTwo} className = "side-image-2" />
-                        <img src = {three} value = {three} onClick = {imageChangeThree} className = "side-image-3" />
-                    </div>
-                </div>
-                <div className = "large-images" >
-                    <img src = {shownImage} className = "display-image" />
-                </div>
-                <h3 className = "single-product-cost" >$ {cost}</h3>
-                <h3 className = "single-product-discount-cost" >$ 13.99</h3>
-                <div className = "content">
-                    <div>
-                        <h4>Description</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a 
-                            galley of type and scrambled it to make a type specimen book.
-                        </p>
-                    </div>
-                    <div>
-                        <h4>Specification</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                    <div>
-                        <h4>Delivery</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing.</p>
-                    </div>
-                    <div>
-                        <button>Add To Cart</button>
-                    </div>
-                </div>
-            </div>
+  const onClickCart = () => {
+    setCartButton(true);
+  };
+
+  const addCart = (singleProduct) => {
+    setCartValue(cartValue + 1);
+    dispatch(addToCart(singleProduct));
+  };
+
+  const removeCart = (id) => {
+    setCartValue(cartValue - 1);
+    dispatch(removeFromCart(id));
+  };
+
+  return (
+    <div className="Single-product">
+      <h2 className="capsule-name">{singleProduct.productName}</h2>
+      <div className="single-product-grid">
+        <div className="small-images">
+          <div>
+            <img
+              src={"http://localhost:3001/" + singleProduct.avatar}
+              value={one}
+              onClick={imageChangeOne}
+              className="side-image-1"
+              alt={singleProduct.productName}
+            />
+            <img
+              src={two}
+              value={two}
+              onClick={imageChangeTwo}
+              className="side-image-2"
+              alt={singleProduct.productName}
+            />
+            <img
+              src={three}
+              value={three}
+              onClick={imageChangeThree}
+              className="side-image-3"
+              alt={singleProduct.productName}
+            />
+          </div>
         </div>
-     );
-}
- 
+        <div className="large-images">
+          <img
+            src={shownImage}
+            className="display-image"
+            alt={singleProduct.productName}
+          />
+        </div>
+        <h3 className="single-product-cost">$ {singleProduct.mrp}</h3>
+        <h3 className="single-product-discount-cost">
+          $ {singleProduct.salePrice}
+        </h3>
+        <div className="content">
+          <div>
+            <h4>Description</h4>
+            <p>{singleProduct.description}</p>
+          </div>
+          <div>
+            <h4>Specification</h4>
+            <p>{singleProduct.specification}</p>
+          </div>
+          <div>
+            <h4>Delivery</h4>
+            <p>{singleProduct.deliveryOption}</p>
+          </div>
+          <div>
+            <button className="add-to-cart" onClick={() => onClickCart()}>
+              {cartButton ? (
+                <div>
+                  <button
+                    className="minus"
+                    onClick={() => removeCart(singleProduct._id)}
+                  >
+                    -
+                  </button>
+
+                  {reduxCartQty.filter(item => item._id === singleProduct._id).map(itemQty =>
+                    <span className="text">{itemQty.qty}</span>
+                  )}
+                  
+                  <button
+                    className="plus"
+                    onClick={() => addCart(singleProduct)}
+                  >
+                    +
+                  </button>
+                </div>
+              ) : (
+                "Add To Cart"
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default SingeleProduct;

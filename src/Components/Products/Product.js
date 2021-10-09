@@ -1,155 +1,189 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getParam } from "../Redux/reduxCart/cartActions";
 
 // ICONS
-import ourpicks from '../../icons/ourpicks.png';
-import sale from '../../icons/sale.png';
-import vitamins from '../../icons/vitamins.png';
-import oils from '../../icons/oils.png';
-import books from '../../icons/books.png';
-import supplements from '../../icons/supplements.png';
-import merchandise from '../../icons/merchandise.png';
-import cosmetics from '../../icons/cosmetics.png';
-import fitness from '../../icons/fitness.png';
+import ourpicks from "../../icons/ourpicks.png";
+import sale from "../../icons/sale.png";
+import vitamins from "../../icons/vitamins.png";
+import oils from "../../icons/oils.png";
+import books from "../../icons/books.png";
+import supplements from "../../icons/supplements.png";
+import merchandise from "../../icons/merchandise.png";
+import cosmetics from "../../icons/cosmetics.png";
+import fitness from "../../icons/fitness.png";
 
-import './Products.css';
+import "./Products.css";
 
 const products = [
-    {
-        image: ourpicks,
-        name: 'Our Picks'
-    },
-    {
-        image: sale,
-        name: 'Sale'
-    },
-    {
-        image: vitamins,
-        name: 'Vitamins'
-    },
-    {
-        image: oils,
-        name: 'Oils'
-    },
-    {
-        image: books,
-        name: 'Books'
-    },
-    {
-        image: supplements,
-        name: 'Supplements'
-    },
-    {
-        image: merchandise,
-        name: 'Merchandise'
-    },
-    {
-        image: cosmetics,
-        name: 'Cosmetics'
-    },
-    {
-        image: fitness,
-        name: 'fitness'
-    }
+  {
+    image: ourpicks,
+    name: "Our Picks",
+    id: 1,
+  },
+  {
+    image: sale,
+    name: "Sale",
+    id: 9,
+  },
+  {
+    image: vitamins,
+    name: "Vitamins",
+    id: 2,
+  },
+  {
+    image: oils,
+    name: "Oils",
+    id: 3,
+  },
+  {
+    image: books,
+    name: "Books",
+    id: 4,
+  },
+  {
+    image: supplements,
+    name: "Supplements",
+    id: 5,
+  },
+  {
+    image: merchandise,
+    name: "Merchandise",
+    id: 6,
+  },
+  {
+    image: cosmetics,
+    name: "Cosmetics",
+    id: 7,
+  },
+  {
+    image: fitness,
+    name: "fitness",
+    id: 8,
+  },
 ];
 
 const Products = () => {
+  const reduxProduct = useSelector((state) => state.cart.products);
 
-    const[productData, setProductData] = useState([]);
+  const dispatch = useDispatch();
 
-    const url = 'http://18.223.43.173:3001/api/products';
+  const productData = reduxProduct;
 
-    useEffect(async() => {
-        try {
-            const products = await axios.get(url);
-            setProductData(products.data);
-        }catch(err) {
-            console.log(err);
-        } 
-    },[url]);
+  const getParams = (id) => {
+    dispatch(getParam(id));
+    console.log(id);
+  };
 
-    const items = products;
+  const items = products;
 
-    return ( 
-        <div className = "products">
-            <div className = "row-col-2">
-                <h3 className = "heading-primary">products</h3>
-                {/* <div className = "view-products">See all</div> */}
-            </div>
-            <div className = "row-col-9">
-                {items.map(filteredItem =>
-                    <div>
-                        <img src = {filteredItem.image} className = "product-image" />
-                        <div class = "products-name-main" >
-                            { filteredItem.name }
-                        </div>
-                    </div>  
-                )}
-            </div>
-            <div className = "row-col-2">
-                <h3 className="heading-secondary">vitamins</h3>
-                <div className = "view-products">
-                    <NavLink exact to = "product-vitamins">
-                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </NavLink>                 
-                </div>
-            </div>
-            <div className="row-col-6">
-                {productData.filter(item => item.category === 'vitamins').map(filteredItem => (
-                    <div>
-                        <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "item-image" />
-                        <div class = "products-sub" >
-                            { filteredItem.productName }
-                        </div>
-                    </div> 
-                ))
-                }
-            </div>
-            <hr />
-            <div className = "row-col-2">
-                <h3 className="heading-secondary">Essential Oils</h3>
-                <div className = "view-products">
-                    <NavLink exact to = "/product-essential-oils">
-                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </NavLink>                 
-                </div>
-            </div>
-            <div className="row-col-6">
-                {productData.filter(item => item.category === 'oil').map(filteredItem => (
-                    <div>
-                        <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "item-image" />
-                        <div class = "products-sub" >
-                            { filteredItem.productName }
-                        </div>
-                    </div> 
-                ))
-                }
-            </div>
-            <hr />
-            <div className = "row-col-2">
-                <h3 className="heading-secondary">Books</h3>
-                <div className = "view-products">
-                    <NavLink exact to = "/product-books">
-                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </NavLink>                 
-                </div>
-            </div>
-            <div className="row-col-6">
-                {productData.filter(item => item.category === 'book').map(filteredItem => (
-                    <div>
-                        <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "item-image" />
-                        <div class = "products-sub" >
-                            { filteredItem.productName }
-                        </div>
-                    </div> 
-                ))
-                }
-            </div>
-            <hr />
+  return (
+    <div className="products">
+      <div className="row-col-2">
+        <h3 className="heading-primary">products</h3>
+      </div>
+      <div className="row-col-9">
+        {items.map((filteredItem) => (
+          <div key={filteredItem.id}>
+            <img
+              src={filteredItem.image}
+              className="product-image"
+              alt={filteredItem.productName}
+            />
+            <div className="products-name-main">{filteredItem.name}</div>
+          </div>
+        ))}
+      </div>
+      <div className="row-col-2">
+        <h3 className="heading-secondary">vitamins</h3>
+        <div className="view-products">
+          <NavLink exact to="product-vitamins">
+            <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </NavLink>
         </div>
-     );
-}
-
+      </div>
+      <div className="row-col-6">
+        {productData
+          .filter((item) => item.category === "vitamins")
+          .map((filteredItem) => (
+            <div key={filteredItem._id}>
+              <Link
+                to={`/product/${filteredItem._id}`}
+                onClick={() => getParams(filteredItem._id)}
+                className="product-link"
+              >
+                <img
+                  src={"http://localhost:3001/" + filteredItem.avatar}
+                  className="item-image"
+                  alt={filteredItem.productName}
+                />
+                <div className="products-sub">{filteredItem.productName}</div>
+              </Link>
+            </div>
+          ))}
+      </div>
+      <hr />
+      <div className="row-col-2">
+        <h3 className="heading-secondary">Essential Oils</h3>
+        <div className="view-products">
+          <NavLink exact to="/product-essential-oils">
+            <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </NavLink>
+        </div>
+      </div>
+      <div className="row-col-6">
+        {productData
+          .filter((item) => item.category === "oil")
+          .map((filteredItem) => (
+            <div key={filteredItem._id}>
+              <Link
+                to={`/product/${filteredItem._id}`}
+                onClick={() => getParams(filteredItem._id)}
+                className="product-link"
+              >
+                <img
+                  src={"http://localhost:3001/" + filteredItem.avatar}
+                  className="item-image"
+                  alt={filteredItem.productName}
+                />
+                <div className="products-sub">{filteredItem.productName}</div>
+              </Link>
+            </div>
+          ))}
+      </div>
+      <hr />
+      <div className="row-col-2">
+        <h3 className="heading-secondary">Books</h3>
+        <div className="view-products">
+          <NavLink exact to="/product-books">
+            <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </NavLink>
+        </div>
+      </div>
+      <div className="row-col-6">
+        {productData
+          .filter((item) => item.category === "book")
+          .map((filteredItem) => (
+            <div key={filteredItem._id}>
+              <Link
+                to={`/product/${filteredItem._id}`}
+                onClick={() => getParams(filteredItem._id)}
+                className="product-link"
+              >
+                <img
+                  src={"http://localhost:3001/" + filteredItem.avatar}
+                  className="item-image"
+                  alt={filteredItem.productName}
+                />
+                <div className="products-sub">{filteredItem.productName}</div>
+              </Link>
+            </div>
+          ))}
+      </div>
+      <hr />
+    </div>
+  );
+};
 
 export default Products;

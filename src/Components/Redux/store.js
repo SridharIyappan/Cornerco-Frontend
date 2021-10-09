@@ -3,6 +3,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import cartReducer from './reducer';
 
 
-const store = createStore(cartReducer, composeWithDevTools());
+const store = createStore(cartReducer, {}, composeWithDevTools());
 
 export default store;

@@ -11,7 +11,7 @@ const Header = () => {
     useEffect(() => {
         console.log(screenWidth);
         setScreenWidth(window.innerWidth);
-    }, [window.innerWidth]);
+    }, [screenWidth]);
 
     return ( 
         <>

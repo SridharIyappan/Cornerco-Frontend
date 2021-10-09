@@ -105,7 +105,36 @@
     left: 18rem;
 }
 
-.content div button {
+.add-to-cart {
+    background: #ed2939;
+    width: 200px;
+    height: 36px;
+    color: #fefefa;
+    border-radius: 18px;
+    font-size: 1.6rem;
+    border: none;
+    /* -webkit-transform: rotate(-90deg); */
+}
+
+.minus {
+    float: left;
+    width: 20%;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+.plus {
+    float: right;
+    width: 20%;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+/* .content div button {
     width: 300px;
     height: 50px;
     font-size: 2rem;
@@ -117,7 +146,7 @@
     left: 30%;
     border: none;
     border-radius: 25px;
-}
+} */
 
 @media only screen and (max-width: 600px) {
     

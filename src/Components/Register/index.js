@@ -2,7 +2,7 @@ import whiteTextLogo from "../../images/whiteTextLogo.png";
 import CornercoGif from "../../images/cornerco-gif-temp.gif";
 
 import './index.css'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Regiester = () => {
     return ( 
         <div className = "Register">
             <div className = "left">
-                <img src = {whiteTextLogo} />
+                <img src = {whiteTextLogo} alt = "logo-missing" />
                 <h2>Welcome</h2>
                 <form onSubmit = {registerSubmit} encType = 'multipart/form-data' >
                     <label>Username</label>
@@ -98,8 +98,8 @@ const Regiester = () => {
                 </h3>
             </div>
             <div className = "right">
-                <img src = {CornercoGif} />
-                <img src = {whiteTextLogo} />
+                <img src = {CornercoGif} alt = "gif-missing" />
+                <img src = {whiteTextLogo} alt = "logo-missing" />
             </div>
         </div>
      );

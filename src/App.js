@@ -16,12 +16,32 @@ import Cart from "./Components/Cart/index.js";
 import Login from "./Components/Login/index.js";
 import Regiester from "./Components/Register/index.js";
 
-import {Provider} from 'react-redux';
-import store from "./Components/Redux/store.js";
+import { useEffect } from "react";
+import axios from "axios";
+import { useDispatch } from 'react-redux';
+import { setProducts } from "./Components/Redux/reduxCart/cartActions.js";
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  const url = 'http://localhost:3001/api/products';
+
+    useEffect(() => {
+        fetchAPI();
+    },[url]);
+
+    const fetchAPI = async () => {
+      try {
+        const products = await axios.get(url);
+        dispatch(setProducts(products.data))
+      }catch(err) {
+        console.log(err);
+      }
+    }
+
   return (
-     <Provider store = {store}>
+     
       <Router>
         <Header />
           <Switch>
@@ -30,7 +50,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/products" component={Products} />
             <Route path = "/checkout" component = {Checkout} />
-            <Route path = "/single" component = {SingeleProduct} />
+            <Route path = "/product/:id" component = {SingeleProduct} />
             <Route path = "/product-vitamins" component = {Vitamins} />
             <Route path = "/product-essential-oils" component ={EssentialOils} />
             <Route path = "/product-books" component ={Books} />
@@ -38,14 +58,7 @@ function App() {
           </Switch>
         <Footer />
       </Router>
-    </Provider>
   );
 }
 
 export default App;
-
-
-// <Section1/>
-//      <Section2/>
-//      <Section3/>
-//      <Section4/>
