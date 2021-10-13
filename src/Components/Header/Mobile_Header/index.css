@@ -1,98 +1,98 @@
 .navbar {
-    background-color: #fefefa;
-    /* height: 80px;  */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    padding-bottom: 12px;
-  }
-  
-  .nav-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    max-width: 1500px;
-  }
-  
-  .nav-logo {
-    color: #f5b921;
-    align-items: center;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    flex-grow: 1;
-  }
-  
-  .nav-menu {
-    display: flex;
-    list-style: none;
-    text-align: center;
-    margin-right: 2rem;
-  }
-  
-  .nav-links {
-    color: #1f1f1f;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    height: 100%;
-    border-bottom: 3px solid transparent;
-  }
+  background-color: #fefefa;
+  /* height: 80px;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding-bottom: 12px;
+}
 
-  .fa-code {
-    margin-left: 1rem;
-  }
-  
-  .nav-item {
-    line-height: 40px;
-    margin-right: 1rem;
-    text-decoration: none;
-  }
-  
-  .nav-item:after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0;
-    background: transparent;
-    transition: width 0.7s ease, background-color 0.5s ease;
-  }
-  
-  .nav-item:hover:after {
-    width: 100%;
-    background: #ed2939;
-  }
-  
-  .nav-item .active {
-    color: #ed2939;
-    border: 1px solid #ed2939;
-  }
-  
-  .nav-icon {
-    display: none;
-  }
+.nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  max-width: 1500px;
+}
 
-  .header__search {
-    border: none;
-    outline: none;
-    height: 35px;
-    width: 200px;
-    border-radius: 25px;
- }
-  .header-searchout{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 35px;
-    border: 1px solid white;
-  -moz-box-shadow:   2px 2px 4px 5px #ccc;
-  -webkit-box-shadow: 2px 2px 4px 5px #ccc; 
-   box-shadow: 1px 2px 1px 1px #ccc;
+.nav-logo {
+  color: #f5b921;
+  align-items: center;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  flex-grow: 1;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.nav-links {
+  color: #1f1f1f;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  border-bottom: 3px solid transparent;
+}
+
+.fa-code {
+  margin-left: 1rem;
+}
+
+.nav-item {
+  line-height: 40px;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.nav-item:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.nav-item:hover:after {
+  width: 100%;
+  background: #ed2939;
+}
+
+.nav-item .active {
+  color: #ed2939;
+  border: 1px solid #ed2939;
+}
+
+.nav-icon {
+  display: none;
+}
+
+.header__search {
+  border: none;
+  outline: none;
+  height: 35px;
+  width: 200px;
+  border-radius: 25px;
+}
+.header-searchout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 35px;
+  border: 1px solid white;
+  -moz-box-shadow: 2px 2px 4px 5px #ccc;
+  -webkit-box-shadow: 2px 2px 4px 5px #ccc;
+  box-shadow: 1px 2px 1px 1px #ccc;
 }
 
 .search-icon {
@@ -100,82 +100,88 @@
 }
 
 ::placeholder {
-   color: red;
-   padding-left: 5px; 
- }  
-  @media screen and (max-width: 960px) {
-
-    .nav-logo {
-      max-width: 100px;
-      float: left;
-      margin: 0;
-      position: relative;
-      left: 2rem;
-    }
-    .nav-menu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      border-top: 1pxsolid #fff;
-      position: absolute;
-      top: 80px;
-      left: -110%;
-      opacity: 1;
-      transition: all 0.5s ease;
-    }
-  
-    .nav-menu.active {
-      background: #fefefa;
-      left: 0px;
-      opacity: 1;
-      transition: all 0.5s ease;
-      z-index: 1;
-    }
-    .nav-item .active {
-      color: #ed2939;
-      border: none;
-      text-decoration: underline;
-    }
-    .nav-links {
-      width: 100%;
-      display: table;
-      text-align: end;
-      text-decoration: none;
-    }
-
-    .nav-links:hover {
-      color: #ed2939;
-    }
-    
-    .nav-links:hover:after {
-      width: 100%;
-      bottom: 40px;
-      background: #ed2939;
-    }
-  
-    .nav-icon {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
-      font-size: 3.8rem;
-      cursor: pointer;
-      color: #1f1f1f;
-    }
-    .header__chat {
-      font-size: 1rem;
-      color: red;
-    }
-    .Header__Search {
-      width: 180px !important;
-    }
-    .header-searchout {
-      position: relative;
-      left: 2rem;
-    }
-    .Header__InnerDiv {
-      position: relative;
-      left: 1.5rem
-    }
+  color: red;
+  padding-left: 5px;
+}
+@media screen and (max-width: 960px) {
+  .nav-logo {
+    max-width: 100px;
+    float: left;
+    margin: 0;
+    position: relative;
+    left: 2rem;
   }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1pxsolid #fff;
+    position: absolute;
+    top: 80px;
+    left: -110%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: #fefefa;
+    left: 0px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .nav-item .active {
+    color: #ed2939;
+    border: none;
+    text-decoration: underline;
+  }
+  .nav-links {
+    width: 100%;
+    display: table;
+    text-align: end;
+    text-decoration: none;
+  }
+
+  .nav-links:hover {
+    color: #ed2939;
+  }
+
+  .nav-links:hover:after {
+    width: 100%;
+    bottom: 40px;
+    background: #ed2939;
+  }
+
+  .nav-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 3.8rem;
+    cursor: pointer;
+    color: #1f1f1f;
+  }
+  .header__chat {
+    font-size: 1rem;
+    color: red;
+  }
+  .Header__Search {
+    width: 180px !important;
+  }
+  .header-searchout {
+    position: relative;
+    left: 2rem;
+  }
+  .Header__InnerDiv {
+    position: relative;
+    left: 1.5rem;
+  }
+  .profile-dropdown {
+    min-width: 17rem;
+    height: 20rem;
+    position: relative;
+    top: 13rem !important;
+    letter-spacing: 0.3rem;
+  }
+}

@@ -35,6 +35,7 @@ align-items: center;
     width: 30px;
     border: 1px solid black;
     border-radius: 50%;
+    color: black;
 }
 
 .Header__Search{
@@ -118,4 +119,39 @@ align-items: center;
     position: relative;
     left: 1rem;
     font-size: 2rem;
+}
+
+.dropdown-toggle::after {
+    border: none;
+}
+
+.profile-dropdown {
+    width: 25rem;
+    height: 20rem;
+    position: relative;
+    top: 8rem;
+    letter-spacing: 0.3rem;
+}
+
+.profile-dropdown li {
+    font-size: 1.8rem;
+}
+
+.profile-dropdown hr {
+    color: #454545;
+    height: 2px;
+}
+
+.nav-orders {
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-item:hover, .nav-orders:hover {
+    color: #ed2939;
+}
+
+.popup-content {
+    left: 850px !important;
+    width: 450px !important;
 }

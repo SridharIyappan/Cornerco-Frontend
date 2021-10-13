@@ -8,12 +8,12 @@ import Section4 from "./SectionPart4/Section4";
 const Home = () => {
 
     return (
-        <div className = "Home">
-         <Section1 />
-         <Section2 />
-         <Section3 />
-         <Section4 />
-        </div>
+      <div className="Home">
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+      </div>
     );
 }
 

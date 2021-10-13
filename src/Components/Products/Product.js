@@ -73,7 +73,6 @@ const Products = () => {
 
   const getParams = (id) => {
     dispatch(getParam(id));
-    console.log(id);
   };
 
   const items = products;

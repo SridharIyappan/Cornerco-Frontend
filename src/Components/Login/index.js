@@ -1,11 +1,16 @@
-import whiteTextLogo from "../../images/whiteTextLogo.png";
-import CornercoGif from "../../images/cornerco-gif-temp.gif";
-
-import "./index.css";
 import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
+import {useDispatch} from 'react-redux';
+
+import {getUser} from '../Redux/reduxCart/cartActions';
+// import user from '../../Redux/reduxCart/cartActions';
+
+import whiteTextLogo from "../../images/whiteTextLogo.png";
+import CornercoGif from "../../images/cornerco-gif-temp.gif";
+
+import "./index.css";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -16,6 +21,7 @@ const Login = () => {
   const [loginFailed, setLoginFailed] = useState(false);
 
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const loginEmailChange = (e) => {
     setLoginEmail(e.target.value);
@@ -37,6 +43,7 @@ const Login = () => {
       loginData.map((log) => {
         if (log.email === loginEmail && log.password === loginPassword) {
           history.push("/");
+          dispatch(getUser(loginEmail, log.userName))
         } else if (log.email === loginEmail) {
           setPasswordFailed(true);
         } else if (log.password === loginPassword) {

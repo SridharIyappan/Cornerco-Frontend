@@ -1,0 +1,30 @@
+.MyOrders {
+    background: #454545;
+    color: #fefefa;
+}
+
+.MyOrders h3 {
+    font-size: 3.2rem;
+}
+
+.MyOrders .my-orders {
+    padding-left: 3rem;
+    padding-top: 3rem;
+}
+
+.MyOrders .my-orders .my-order{
+    font-size: 1.8rem;
+    padding-top: 3rem;
+}
+
+.MyOrders .my-orders .my-order div{
+    padding-top: 1.5rem;
+}
+
+.MyOrders .my-orders .my-order h4{
+    font-size: 1.8rem;
+}
+
+.MyOrders .my-orders .my-order .pad {
+    padding-left: 3rem;
+}

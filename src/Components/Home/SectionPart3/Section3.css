@@ -1,23 +1,107 @@
-
-.Section3__Box1{
-    height: 150px;
-    width: 250px;
-    border:1px solid #fefefe;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: white;
-    color: black;
+.Section3__Box1 {
+  height: 150px;
+  width: 250px;
+  border: 1px solid #fefefe;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  color: black;
 }
-
 
 .Section3__Box2 {
-    height: 400px;
-    width: 220px;
-    border:1px solid  #fefefe;
+  height: 300px;
+  width: 220px;
+  border: 1px solid #fefefe;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+}
+
+.Section3__Main {
+  /* height: 600px;  */
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("https://www.mystrengthtraining.com/wp-content/uploads/2018/03/deadlift.jpg");
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  background-size: 100% 100%;
+  opacity: 0.8;
+  padding: 4rem 0;
+  overflow-x: hidden;
+}
+
+.Section3__Box3 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 350px; */
+  width: 250px;
+}
+
+.Section3__CardButton {
+  height: 40px;
+  width: 100px;
+  display: block;
+  border-radius: 5px;
+  border: 1px #fb5a48;
+  background-color: #fb5a48;
+  color: white;
+}
+
+.Section3__pricemini {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.Section3__Box2 ul > li {
+  font-size: 15px;
+}
+
+.Section3__Box2 ul {
+  list-style: none;
+  padding-left: 15px;
+  padding-right: 8px;
+}
+
+.Section3__Box2 ul li:before {
+  content: "✓ ";
+  color: green;
+}
+
+.Section3__Box2 h4 {
+  text-align: center;
+}
+
+.Section3__InnerOuter {
+  /* height: 400px; */
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .Section3__Main {
+    flex-direction: column;
+  }
+  .Section3__InnerOuter {
+    flex-direction: column;
+  }
+  .Section3__Box2 {
+    height: 300px;
+    width: 300px;
+    border: 1px solid #fefefe;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -25,69 +109,6 @@
     align-items: center;
     background-color: white;
     color: black;
-}
-
-.Section3__Main{
-    height: 600px; 
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url("https://www.mystrengthtraining.com/wp-content/uploads/2018/03/deadlift.jpg");
-    background-repeat: no-repeat;
-    background-size: contain, cover;
-    background-size: 100% 100%;
-   opacity: 0.8;
-}
-
-.Section3__Box3{ 
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 350px;
-    width: 250px;
-}
-
-.Section3__CardButton{
-    height: 40px;
-    width: 100px;
-display: block;
-border-radius: 5px;
-border: 1px #FB5A48;
-background-color: #FB5A48;
-color: white;
-}
-
-.Section3__pricemini{
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.Section3__Box2 ul >li{
-    font-size: 15px;
-}
-
-.Section3__Box2 ul{
-    list-style: none;
-    padding-left: 15px;
-    padding-right: 8px;
+    margin: 10px 0;
   }
-  
-.Section3__Box2  ul li:before {
-    content: '✓ ';
-    color: green;
-  }
-
-  .Section3__Box2 h4{
-      text-align: center;
-  }
-
-
-.Section3__InnerOuter{
-    height: 400px;
-    width: 750px;
-    display: flex;
-    justify-content: space-between;
-   align-items: center;
 }

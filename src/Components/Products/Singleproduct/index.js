@@ -22,13 +22,7 @@ const SingeleProduct = () => {
   const url = `http://localhost:3001/api/products/${reduxParam}`;
 
   useEffect(() => {
-    fetchSingleProductAPI();
-    
-    // reduxCartQty.filter(quantity => {
-    //   const check = (singleProduct._id === quantity._id);
-    //   console.log(quantity.qty));
-    // }
-      
+    fetchSingleProductAPI();   
   }, [reduxCartQty]);
 
   const fetchSingleProductAPI = async () => {
@@ -37,7 +31,6 @@ const SingeleProduct = () => {
       setSingleProduct(apiData.data);
     } catch (err) {
       console.log(err);
-      console.log("apierror");
     }
   };
 

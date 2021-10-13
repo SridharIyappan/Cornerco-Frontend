@@ -30,6 +30,13 @@ export const removeFromCart = (id) => {
     };
 };
 
+export const addToFavorite = (item) => {
+    return {
+        type: actionTypes.ADD_TO_FAVORITE,
+        payload: item,
+    };
+};
+
 // export const removeFromCart = (id, value) => {
 //     return {
 //         type: actionTypes.REMOVE_FROM_CART,
@@ -56,3 +63,19 @@ export const loadCurrentItem = (item) => {
         payload: item
     };
 };
+
+export const getUser = (email, name) => {
+    return {
+        type: actionTypes.GET_USER,
+        payload: {
+            email,
+            name
+        }
+    }
+}
+
+export const removeUser = () => {
+    return {
+        type: actionTypes.REMOVE_USER,
+    }
+}

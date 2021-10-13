@@ -13,6 +13,7 @@ import Vitamins from "./Components/Products/ProductList/Vitamins/index.js";
 import EssentialOils from "./Components/Products/ProductList/Oils/index.js";
 import Books from "./Components/Products/ProductList/Books/index.js";
 import Cart from "./Components/Cart/index.js";
+import FavoriteProducts from "./Components/Favorite/index.js";
 import Login from "./Components/Login/index.js";
 import Regiester from "./Components/Register/index.js";
 
@@ -20,6 +21,8 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { setProducts } from "./Components/Redux/reduxCart/cartActions.js";
+import MyOrders from "./Components/MyOrders/index.js";
+import { Popper } from "./Components/pop.js";
 
 function App() {
 
@@ -45,16 +48,19 @@ function App() {
       <Router>
         <Header />
           <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Regiester} />
-            <Route exact path="/" component={Home} />
-            <Route path="/products" component={Products} />
-            <Route path = "/checkout" component = {Checkout} />
-            <Route path = "/product/:id" component = {SingeleProduct} />
-            <Route path = "/product-vitamins" component = {Vitamins} />
-            <Route path = "/product-essential-oils" component ={EssentialOils} />
-            <Route path = "/product-books" component ={Books} />
-            <Route path = "/cart" component ={Cart} />
+            <Route exact path= "/login" component={Login} />
+            <Route exact path= "/register" component={Regiester} />
+            <Route exact path= "/" component={Home} />
+            <Route exact path= "/products" component={Products} />
+            <Route exact path = "/checkout" component = {Checkout} />
+            <Route exact path = "/product/:id" component = {SingeleProduct} />
+            <Route exact path = "/product-vitamins" component = {Vitamins} />
+            <Route exact path = "/product-essential-oils" component ={EssentialOils} />
+            <Route exact path = "/product-books" component ={Books} />
+            <Route exact path = "/cart" component ={Cart} />
+            {/* <Route exact path = "/favorite" component ={FavoriteProducts} /> */}
+            <Route exact path = '/my-orders' component = {MyOrders} />
+            <Route exact path = '/popper' component = {Popper} />
           </Switch>
         <Footer />
       </Router>

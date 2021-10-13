@@ -3,7 +3,8 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 3;
     grid-gap: 10rem;
-    background: #fefefe;
+    background: #454545;
+    color: #fefefa;
 }
 
 .footer-logo {
@@ -39,8 +40,8 @@
 
 .footer-icon i {
     padding: 1rem;
-    border-radius: 50%;
-    border: 2px solid #fefefe;
+    /* border-radius: 50%;
+    border: 2px solid #fefefe; */
     box-sizing: border-box;
 }
 

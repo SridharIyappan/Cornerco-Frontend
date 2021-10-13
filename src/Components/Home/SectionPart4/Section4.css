@@ -1,13 +1,14 @@
 .Section4__sideCard{
-    height: 150px;
+    /* height: 150px; */
     width: 400px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 4rem;
 }
 
 .Section4__Main{
-    height: 500px;
+    /* height: 500px; */
     width: 100vw;
     display: flex;
     justify-content: space-around;
@@ -19,7 +20,7 @@
 }
 
 .Section4__Inner{
-    height: 500px;
+    /* height: 500px; */
     width: 80%;
     float: left;
     display: flex;
@@ -53,21 +54,37 @@
 }
 
 .Section4__Ad{
-    height: 300px;
-    width: 20%;
+    /* height: 300px; */
+    /* width: 20%; */
     float: right;
 }
 
 .Section4__Image{
-    height: 300px;
+    /* height: 300px; */
     width: 100px;
 }
 
 .Section4__InnerTop{
-    height: 30px;
+    /* height: 30px; */
     width: 70%;
     position: relative;
     left: 90px;
     top:20px;
     color:white;
+}
+
+@media only screen and (max-width: 600px) {
+    .Section4__sideCard{
+        margin: 4rem 0;
+    }
+    .Section4__CardInnerPart {
+        margin-left: 18px;
+    }
+    .Section4__Main{
+        flex-direction: column;
+    }
+    .Section4__Image{
+        width: 150px;
+        padding-bottom: 10px;
+    }
 }
