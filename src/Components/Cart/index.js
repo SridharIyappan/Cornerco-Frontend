@@ -32,15 +32,17 @@ const Cart = () => {
     const headers = {
       "Content-Type": "application/json"
     }
-    return fetch('http://localhost:3001/payment', {
-      method: 'POST',
+    return fetch("http://18.223.43.173:3001/payment", {
+      method: "POST",
       headers,
-      body: JSON.stringify(body) 
-    }).then(response => {
-      console.log("RESPONSE", response);
-      const {status} = response;
-      console.log('STATUS', status)
-    }).catch(err => console.log(err))
+      body: JSON.stringify(body),
+    })
+      .then((response) => {
+        console.log("RESPONSE", response);
+        const { status } = response;
+        console.log("STATUS", status);
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -57,7 +59,7 @@ const Cart = () => {
           {cartData.map((cart) => (
             <div className="cart-products">
               <img
-                src={"http://localhost:3001/" + cart.avatar}
+                src={"http://18.223.43.173:3001/uploads" + cart.avatar}
                 className="cart-product-image"
                 alt={cart.avatar}
               />
@@ -80,15 +82,15 @@ const Cart = () => {
           {/* <NavLink exact to = '/checkout'>
             <button>Checkout</button>
           </NavLink> */}
-          <StripeCheckout 
-            stripeKey = 'pk_test_51Jhou6FZKpBaoF60xmXJDjWubw8UptwpRcSy2lCMLB37j4u0lJUcE8u1jKrY6Z86wyJfH0WDZSZ1KzGnM3hJmiYA00iZBLq56Y'
-            token = {makePayment}
-            name = "Buy Product"
-            amount = {cartData.salePrice * 100}
+          <StripeCheckout
+            stripeKey="pk_test_51Jhou6FZKpBaoF60xmXJDjWubw8UptwpRcSy2lCMLB37j4u0lJUcE8u1jKrY6Z86wyJfH0WDZSZ1KzGnM3hJmiYA00iZBLq56Y"
+            token={makePayment}
+            name="Buy Product"
+            amount={cartData.salePrice * 100}
             shippingAddress
-            billingAddress = {false}
-            >
-              <button>Checkout</button>
+            billingAddress={false}
+          >
+            <button>Checkout</button>
           </StripeCheckout>
         </div>
       </div>

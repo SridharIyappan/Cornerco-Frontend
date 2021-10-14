@@ -20,14 +20,16 @@ const FavoriteProducts = () => {
           {reduxProduct.map((data) => (
             <div className="favorite-map">
               <img
-                src={"http://localhost:3001/" + data.avatar}
+                src={"http://18.223.43.173:3001/uploads" + data.avatar}
                 className="cart-product-image"
                 alt={data.avatar}
               />
               <div>
                 <h3>{data.productName}</h3>
                 <h3>{data.salePrice}</h3>
-                <button onClick = {()=>removeFavorite(data)}>Remove From Favorite</button>
+                <button onClick={() => removeFavorite(data)}>
+                  Remove From Favorite
+                </button>
               </div>
             </div>
           ))}

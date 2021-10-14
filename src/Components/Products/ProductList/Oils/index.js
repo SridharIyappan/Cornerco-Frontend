@@ -22,34 +22,43 @@ const EssentialOils = () => {
     }
 
     return (
-        <div className = "Products">
-            <h3 className="product-list-heading">Essential Oils</h3>
-            <div className = "product-grid">
-                    {productData.filter(item => item.category === 'oil').map(filteredItem => (
-                        <div key = {filteredItem._id}>
-                            <img src = {'http://localhost:3001/'+filteredItem.avatar} className = "product-list-image" alt = {filteredItem.productName}/>
-                            <i className = {favoriteData.find(favorite => favorite._id === filteredItem._id) ? "fa fa-heart i-fav-heart" : "fa fa-heart i-heart" }
-                               onClick = { () => onClickFavoriteIcon(filteredItem) }
-                            />
-                            <div className = "product-list-name" >
-                                { filteredItem.productName }
-                            </div>
-                            <div className = "product-list-price" >
-                                $ { filteredItem.mrp }
-                            </div>
-                            <Link
-                                to={`/product/${filteredItem._id}`}
-                                onClick={() => getParams(filteredItem._id)}
-                            >
-                                <button className = "add-to-cart" >
-                                    View Product
-                                </button>
-                            </Link>
-                        </div> 
-                    ))}
-            </div>
+      <div className="Products">
+        <h3 className="product-list-heading">Essential Oils</h3>
+        <div className="product-grid">
+          {productData
+            .filter((item) => item.category === "oil")
+            .map((filteredItem) => (
+              <div key={filteredItem._id}>
+                <img
+                  src={"http://18.223.43.173:3001/uploads" + filteredItem.avatar}
+                  className="product-list-image"
+                  alt={filteredItem.productName}
+                />
+                <i
+                  className={
+                    favoriteData.find(
+                      (favorite) => favorite._id === filteredItem._id
+                    )
+                      ? "fa fa-heart i-fav-heart"
+                      : "fa fa-heart i-heart"
+                  }
+                  onClick={() => onClickFavoriteIcon(filteredItem)}
+                />
+                <div className="product-list-name">
+                  {filteredItem.productName}
+                </div>
+                <div className="product-list-price">$ {filteredItem.mrp}</div>
+                <Link
+                  to={`/product/${filteredItem._id}`}
+                  onClick={() => getParams(filteredItem._id)}
+                >
+                  <button className="add-to-cart">View Product</button>
+                </Link>
+              </div>
+            ))}
         </div>
-     );
+      </div>
+    );
 }
 
  

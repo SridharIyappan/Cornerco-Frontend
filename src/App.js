@@ -28,7 +28,7 @@ function App() {
 
   const dispatch = useDispatch();
 
-  const url = 'http://localhost:3001/api/products';
+  const url = 'http://18.223.43.173:3001/api/products';
 
     useEffect(() => {
         fetchAPI();
