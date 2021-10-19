@@ -6,7 +6,7 @@ const Section1 = () => {
     <div className="Section1__Main">
       <div className="Section__Carousel">
         <div id="carouselOne" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-inner">
+           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src="https://picsum.photos/960/500" className="d-block" alt="..." />
             </div>
@@ -16,7 +16,7 @@ const Section1 = () => {
             <div className="carousel-item">
               <img src="https://picsum.photos/960/500" className="d-block" alt="..." />
             </div>
-          </div>
+          </div> 
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselOne" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>

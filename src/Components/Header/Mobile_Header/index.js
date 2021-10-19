@@ -44,7 +44,7 @@ function MobileHeader() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src={whiteTextLogo} alt="CornerCo" />
+            <img src={whiteTextLogo} alt="CornerCo" className = "nav-logo-image"/>
           </div>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -84,7 +84,7 @@ function MobileHeader() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
+                to="/health-wealth"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -95,7 +95,7 @@ function MobileHeader() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
+                to="/community"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -109,7 +109,7 @@ function MobileHeader() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
+                to="/resources"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -122,7 +122,8 @@ function MobileHeader() {
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
         </div>
-        <div className="header-searchout">
+        {/* <div className="header-searchout"> */}
+        <div className = "header-input">
           <div>
             <input
               type="text"

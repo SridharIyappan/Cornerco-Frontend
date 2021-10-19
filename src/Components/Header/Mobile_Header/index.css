@@ -8,14 +8,14 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  padding-bottom: 12px;
+  /* padding-bottom: 12px; */
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 80px;
+  height: 60px;
   max-width: 1500px;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .nav-item {
-  line-height: 40px;
+  /* line-height: 40px; */
   margin-right: 1rem;
   text-decoration: none;
 }
@@ -96,7 +96,10 @@
 }
 
 .search-icon {
-  margin-right: 10%;
+  /* margin-right: 10%; */
+  position: relative;
+  bottom: 23px;
+  left: 247px;
 }
 
 ::placeholder {
@@ -110,6 +113,9 @@
     margin: 0;
     position: relative;
     left: 2rem;
+  }
+  .nav-logo-image {
+    width: 160px;
   }
   .nav-menu {
     display: flex;
@@ -140,6 +146,7 @@
     display: table;
     text-align: end;
     text-decoration: none;
+    font-size: 2rem;
   }
 
   .nav-links:hover {
@@ -155,10 +162,10 @@
   .nav-icon {
     display: block;
     position: absolute;
-    top: 0;
+    top: 1.4rem;
     right: 0;
     transform: translate(-100%, 60%);
-    font-size: 3.8rem;
+    font-size: 2.5rem;
     cursor: pointer;
     color: #1f1f1f;
   }
@@ -170,8 +177,9 @@
     width: 180px !important;
   }
   .header-searchout {
-    position: relative;
-    left: 2rem;
+    /* position: relative;
+    left: -4rem; */
+    width: 65%;
   }
   .Header__InnerDiv {
     position: relative;
@@ -183,5 +191,22 @@
     position: relative;
     top: 13rem !important;
     letter-spacing: 0.3rem;
+  }
+
+  .Header__InnerDiv {
+    display: flex;
+    height: 30px;
+    width: 27%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .header-input {
+    width: 270px;
+  }
+  .header-input div input {
+    border: 1px solid grey;
+    border-radius: 25px;
+    width: 270px !important;
+    margin-top: 14px;
   }
 }

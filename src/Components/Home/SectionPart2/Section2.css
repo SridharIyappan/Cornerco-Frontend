@@ -20,6 +20,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: #fefefa;
+    margin-bottom: 30px;
 }
 
 .Section2__CardMain p{
@@ -69,7 +71,7 @@
     top:15px;
     border:1px solid #FB5A48;
     width:250px;
-    height: 600px;
+    height: 560px;
     float: right;
     background-color: #FB5A48;
     display: flex;
@@ -90,6 +92,11 @@
     width: 100vw;
     /* height: 850px; */
     height: 100%;
+}
+
+h3 b {
+    color: #fefefa;
+    font-size: 2.4rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -114,7 +121,7 @@
     }
     .Section2__CardImage{
     border-radius: 10px;
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 240px;
 }
 }

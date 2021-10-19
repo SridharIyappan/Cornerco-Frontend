@@ -7,10 +7,14 @@ const Section3 = () => {
       <div className="Section3__Box3">
         <div className="Section3__Box1">
           <h4>
-            <strong>Become a Coach</strong>
+            <strong style={{ fontSize: "28px" }}>Become a Coach</strong>
           </h4>
-          <p>Lorem ipsum dolor sit amet, consectetur</p>
-          <p style={{ color: "red" }}>Get Started ></p>
+          <p className="coach-p">Lorem ipsum dolor sit amet, consectetur</p>
+          <p className="coach-p">Lorem ipsum dolor sit amet, consectetur</p>
+          <p className="coach-p">Lorem ipsum dolor sit amet, consectetur</p>
+          <p className="coach-p" style={{ color: "red" }}>
+            Get Started >
+          </p>
         </div>
       </div>
       <div className="Section3__InnerOuter">

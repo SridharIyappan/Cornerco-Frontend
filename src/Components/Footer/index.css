@@ -110,7 +110,11 @@ li {
         grid-column: 2;
         grid-row: 1/3;
         align-self: end;
-        right: 0rem
+        justify-self: end;
+        right: 2rem
+    }
+    .footer-about ul li {
+        font-size: 1.6rem;
     }
     .footer-img {
         width: 180px;

@@ -1,0 +1,106 @@
+.HealthWealth {
+    overflow-x: hidden;
+}
+.health-wealth {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 3rem;
+  position: relative;
+  top: 1rem;
+  /* align-items: center; */
+  justify-items: center;
+}
+.health-wealth-content {
+  padding: 4rem;
+}
+.HealthWealth h3 {
+  font-size: 3.2rem;
+  color: #fefefa;
+  position: relative;
+  top: 6rem;
+  left: 3.8rem;
+}
+.health-wealth-content p {
+  font-size: 2rem;
+  color: #d8d8d2;
+}
+
+.health-wealth-images {
+  position: relative;
+  left: 10rem;
+}
+
+.health-wealth-images .man {
+  width: 34rem;
+}
+
+.health-wealth-images .icon {
+  position: relative;
+  right: 35rem;
+  top: 19rem;
+}
+
+.HealthWealth .stores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 30rem;
+}
+
+.HealthWealth .apple-store {
+  justify-self: flex-end;
+  padding: 0 20px 20px 0;
+}
+
+.HealthWealth .google-store {
+  justify-self: flex-start;
+  padding: 0 0 20px 20px;
+}
+
+ .HealthWealth .apple-icon,
+.google-icon {
+  width: 24rem;
+}
+
+@media screen and (max-width: 780px) {
+  .HealthWealth {
+    text-align: center;
+  }
+  .HealthWealth h3 {
+      left: 0rem;
+  }
+  .health-wealth {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 90px;
+    justify-items: center;
+  }
+  .health-wealth-images {
+    grid-column: 1/1;
+    grid-row: 1;
+    left: 0;
+  }
+  .health-wealth-content {
+    grid-column: 1/1;
+    grid-row: 2;
+  }
+  .health-wealth-images .icon {
+    position: relative;
+    right: 0rem;
+    top: -9rem;
+  }
+ .HealthWealth .stores {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 20rem;
+  }
+
+  .HealthWealth .apple-store {
+    justify-self: center;
+    padding: 0 5px 0 0;
+  }
+
+  .HealthWealth .google-store {
+    justify-self: center;
+    padding: 5px 0 10px 0;
+  }
+}

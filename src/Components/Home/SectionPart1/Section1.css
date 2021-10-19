@@ -32,3 +32,12 @@
 .carousel-indicators {
   border-radius: 50% !important;
 }
+
+@media screen and (max-width: 780px) {
+.Section__Carousel {
+  width: 0px;
+}
+.Section1__Second {
+  width: 100%;
+}
+}

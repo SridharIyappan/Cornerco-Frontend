@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getParam } from "../Redux/reduxCart/cartActions";
 
+import BackGround from "../../images/Health-Wealth/web-bg.png";
+
 // ICONS
 import ourpicks from "../../icons/ourpicks.png";
 import sale from "../../icons/sale.png";
@@ -78,7 +80,7 @@ const Products = () => {
   const items = products;
 
   return (
-    <div className="products">
+    <div className="products" style={{ backgroundImage: `url(${BackGround})` }}>
       <div className="row-col-2">
         <h3 className="heading-primary">products</h3>
       </div>
@@ -113,7 +115,7 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
+                  src={"http://18.223.43.173:3001/uploads" + filteredItem.avatar}
                   className="item-image"
                   alt={filteredItem.productName}
                 />
@@ -142,7 +144,9 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={"http://18.223.43.173:3001/uploads" + filteredItem.avatar}
+                  src={
+                    "http://18.223.43.173:3001/uploads" + filteredItem.avatar
+                  }
                   className="item-image"
                   alt={filteredItem.productName}
                 />
@@ -171,7 +175,9 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={"http://18.223.43.173:3001/uploads" + filteredItem.avatar}
+                  src={
+                    "http://18.223.43.173:3001/uploads" + filteredItem.avatar
+                  }
                   className="item-image"
                   alt={filteredItem.productName}
                 />

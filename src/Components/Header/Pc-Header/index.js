@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
+import BackGround from "../../../images/Health-Wealth/web-bg.png";
+
 import "./HeadCss.css";
 import whiteTextLogo from "../../../images/whiteTextLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -114,13 +116,14 @@ const PcHeader = () => {
           <Popup
             trigger={
               // <Link exact to="/favorite">
-                <div className="Header__IconOuter">
-                  <i className="fa fa-heart" aria-hidden="true"></i>
-                </div>
+              <div className="Header__IconOuter">
+                <i className="fa fa-heart" aria-hidden="true"></i>
+              </div>
               // </Link>
             }
             position="bottom right"
             className="popup"
+            style={{ backgroundImage: `url(${BackGround})` }}
           >
             <FavoriteProducts />
           </Popup>
@@ -166,7 +169,7 @@ const PcHeader = () => {
         <div className="nav-link">
           <NavLink
             exact
-            to="/health&wealth"
+            to="/health-wealth"
             activeClassName="active"
             className="nav-links"
             onClick={handleClick}
@@ -188,7 +191,7 @@ const PcHeader = () => {
             <FontAwesomeIcon icon={faComments} size="2x" />
           </span>
         </div>
-        <div className="nav-link">
+        <div className="nav-link-boder">
           <NavLink
             exact
             to="/resources"

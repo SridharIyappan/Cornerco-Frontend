@@ -1,0 +1,96 @@
+.Resources h3 {
+  color: #fefefa;
+  font-size: 3.2rem;
+  position: relative;
+  top: 5rem;
+  left: 3rem;
+}
+.Resources .resources-section-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+.Resources .resources-section-1 .content-1 {
+  padding-left: 3rem;
+}
+.Resources .resources-content {
+  font-size: 2rem;
+  color: #d8d8d2;
+}
+
+.Resources .resources-section-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.Resources .resources-section-2 .content-2 {
+  padding-bottom: 2rem;
+}
+
+.Resources .stores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 3rem;
+}
+
+.Resources .stores .apple-store {
+  justify-self: flex-end;
+  width: 24rem;
+  padding: 0 10px 20px 0;
+}
+.Resources .stores .google-store {
+  justify-self: flex-start;
+  width: 24rem;
+  padding: 0 0 20px 10px;
+}
+
+@media screen and (max-width: 780px) {
+    .Resources {
+        text-align: center;
+    }
+    .Resources h3{
+        left: 0;
+    }
+  .Resources .resources-section-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-top: 5rem;
+  }
+  .Resources .resources-image {
+      width: 90%;
+      position: relative;
+      top: 1rem;
+  }
+  .Resources .resources-section-1 .content-1 {
+    grid-column: 1/1;
+    grid-row: 2;
+    padding: 0 2rem 2rem 2rem;
+  }
+  .Resources .resources-section-1 .Resources-image {
+    grid-column: 1/1;
+    grid-row: 1;
+    width: 100%;
+  }
+  .Resources .stores {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 5rem;
+  }
+
+  .Resources .stores .apple-store {
+    justify-self: center;
+    align-self: center;
+    padding: 0 0 10px 0;
+  }
+
+  .Resources .stores .google-store {
+    justify-self: center;
+    align-self: center;
+    padding: 0 0 20px 0;
+  }
+}

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
+import BackGround from "../../images/Health-Wealth/web-bg.png";
+
+
 import StripeCheckout from 'react-stripe-checkout';
 
 import "./index.css";
@@ -12,6 +15,7 @@ const Cart = () => {
   const [subTotal, setSubtotal] = useState(12);
   const [total, setTotal] = useState(12);
   const [delivery, setDelivery] = useState('Available');
+  const [show ,setShow] = useState(false);
 
 
   useEffect(() => {
@@ -20,6 +24,11 @@ const Cart = () => {
       let cart = cartTotal.qty * cartTotal.salePrice;
       item += cart
     })
+    if (item <= 0) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
     setTotal(item);
     setSubtotal(item);
   },[cartData])
@@ -32,7 +41,7 @@ const Cart = () => {
     const headers = {
       "Content-Type": "application/json"
     }
-    return fetch("http://18.223.43.173:3001/payment", {
+    return fetch("http://localhost:3001/payment", {
       method: "POST",
       headers,
       body: JSON.stringify(body),
@@ -46,9 +55,10 @@ const Cart = () => {
   }
 
   return (
-    <div className="Cart">
+    <div className="Cart" style={{ backgroundImage: `url(${BackGround})` }}>
       <h3>Shopping Cart</h3>
-      <div className="cart-grid">
+      {!show && <p>Cart Is Empty</p>}
+      {show && <div className="cart-grid">
         <div className="cart-product-details">
           <div>
             <p>Product</p>
@@ -94,6 +104,7 @@ const Cart = () => {
           </StripeCheckout>
         </div>
       </div>
+}
     </div>
   );
 };
