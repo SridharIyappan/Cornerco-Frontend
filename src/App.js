@@ -26,6 +26,8 @@ import { Popper } from "./Components/pop.js";
 import HealthAndWealth from "./Components/Health&Wealth/index.js";
 import Community from "./Components/Community/index.js";
 import Resources from "./Components/Resources/index.js";
+import EnterOtp from "./Components/EntarOtp/index.js";
+import ResetPassword from "./Components/ResetPassword/index.js";
 
 function App() {
   const dispatch = useDispatch();
@@ -65,6 +67,8 @@ function App() {
         <Route exact path="/health-wealth" component={HealthAndWealth} />
         <Route exact path="/community" component={Community} />
         <Route exact path="/resources" component={Resources} />
+        <Route exact path="/enter-otp" component={EnterOtp} />
+        <Route exact path="/reset-password" component={ResetPassword} />
       </Switch> 
       <Footer />
     </Router>

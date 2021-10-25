@@ -74,6 +74,26 @@ export const getUser = (email, name) => {
     }
 }
 
+export const getForgetUser = (email, otp, id) => {
+  return {
+    type: actionTypes.GET_FORGET_USER,
+    payload: {
+      email,
+      otp,
+      id,
+    },
+  };
+};
+
+export const getForgetUserId = (id) => {
+  return {
+    type: actionTypes.GET_FORGET_USER_ID,
+    payload: {
+      id,
+    },
+  };
+};
+
 export const removeUser = () => {
     return {
         type: actionTypes.REMOVE_USER,

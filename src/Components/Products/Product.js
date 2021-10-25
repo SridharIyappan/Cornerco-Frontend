@@ -115,7 +115,7 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={"http://18.223.43.173:3001/uploads" + filteredItem.avatar}
+                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
                   className="item-image"
                   alt={filteredItem.productName}
                 />
@@ -144,9 +144,7 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={
-                    "http://18.223.43.173:3001/uploads" + filteredItem.avatar
-                  }
+                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
                   className="item-image"
                   alt={filteredItem.productName}
                 />
@@ -175,9 +173,7 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={
-                    "http://18.223.43.173:3001/uploads" + filteredItem.avatar
-                  }
+                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
                   className="item-image"
                   alt={filteredItem.productName}
                 />

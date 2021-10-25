@@ -29,7 +29,7 @@ const Books = () => {
             .map((filteredItem) => (
               <div key={filteredItem._id}>
                 <img
-                  src={"http://18.223.43.173:3001/uploads" + filteredItem.avatar}
+                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
                   className="product-list-image"
                   alt={filteredItem.productName}
                 />

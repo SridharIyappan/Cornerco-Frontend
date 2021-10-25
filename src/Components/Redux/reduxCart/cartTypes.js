@@ -8,3 +8,6 @@ export const LOAD_CURRENT_ITEM= 'LOAD_CURRENT_ITEM';
 
 export const GET_USER = 'GET_USER';
 export const REMOVE_USER = 'REMOVE_USER';
+
+export const GET_FORGET_USER = 'GET_FORGET_USER';
+export const GET_FORGET_USER_ID = "GET_FORGET_USER_ID";

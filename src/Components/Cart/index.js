@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 
 import BackGround from "../../images/Health-Wealth/web-bg.png";
 
-
 import StripeCheckout from 'react-stripe-checkout';
 
 import "./index.css";
@@ -33,7 +32,7 @@ const Cart = () => {
     setSubtotal(item);
   },[cartData])
 
-  const makePayment = token => {
+  const makePayment = (token) => {
     const body = {
       token, 
       cartData
@@ -69,7 +68,7 @@ const Cart = () => {
           {cartData.map((cart) => (
             <div className="cart-products">
               <img
-                src={"http://18.223.43.173:3001/uploads" + cart.avatar}
+                src={"http://18.223.43.173:3001/" + cart.avatar}
                 className="cart-product-image"
                 alt={cart.avatar}
               />

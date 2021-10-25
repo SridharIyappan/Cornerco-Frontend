@@ -1,0 +1,19 @@
+.EnterOtp {
+    height: 60vh;
+    display: grid;
+    justify-items: center;
+}
+.EnterOtp form {
+    display: grid;
+    justify-items: center;
+    height: fit-content;
+}
+.EnterOtp form input {
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid #454545;
+}
+.EnterOtp button {
+    width: 200px;
+}

@@ -67,7 +67,7 @@ const SingeleProduct = () => {
         <div className="small-images">
           <div>
             <img
-              src={"http://18.223.43.173:3001/uploads" + singleProduct.avatar}
+              src={"http://18.223.43.173:3001/" + singleProduct.avatar}
               value={one}
               onClick={imageChangeOne}
               className="side-image-1"
