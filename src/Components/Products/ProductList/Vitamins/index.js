@@ -30,7 +30,7 @@ const Vitamins = () => {
             .map((filteredItem) => (
               <div key={filteredItem._id}>
                 <img
-                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
+                  src={"http://3.144.43.94:3001/" + filteredItem.avatar}
                   className="product-list-image"
                   alt={filteredItem.productName}
                 />

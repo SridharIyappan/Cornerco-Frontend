@@ -7,7 +7,6 @@ import "./index.css";
 const ResetPassword = () => {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const id = useSelector((state) => state.cart.forgetUserId.id);
   const history = useHistory();
@@ -24,8 +23,9 @@ const ResetPassword = () => {
 
   const resetPassword = async (e) => {
     e.preventDefault();
+    let confirmPassword = '';
     if (password === rePassword) {
-      setConfirmPassword(password);
+      confirmPassword = password;
     } else {
       console.log("password mismatch");
     }
@@ -34,7 +34,7 @@ const ResetPassword = () => {
     console.log(confirmPassword);
     try {
       await axios
-        .put(`http://localhost:3001/api/users/${id}`, data)
+        .put(`http://3.144.43.94:3001/api/users/${id}`, data)
         .then(setPassword(""), setRePassword(""))
         .then(history.push("/"));
     } catch (err) {

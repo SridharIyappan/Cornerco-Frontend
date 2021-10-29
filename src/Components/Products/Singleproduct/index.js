@@ -19,7 +19,7 @@ const SingeleProduct = () => {
   const [cartButton, setCartButton] = useState(false);
   const [cartValue, setCartValue] = useState(0);
   const [shownImage, setShownImage] = useState(four);
-  const url = `http://18.223.43.173:3001/api/products/${reduxParam}`;
+  const url = `http://3.144.43.94:3001/api/products/${reduxParam}`;
 
   useEffect(() => {
     fetchSingleProductAPI();   
@@ -67,7 +67,7 @@ const SingeleProduct = () => {
         <div className="small-images">
           <div>
             <img
-              src={"http://18.223.43.173:3001/" + singleProduct.avatar}
+              src={"http://3.144.43.94:3001/" + singleProduct.avatar}
               value={one}
               onClick={imageChangeOne}
               className="side-image-1"

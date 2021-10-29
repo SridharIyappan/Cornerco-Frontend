@@ -32,7 +32,7 @@ import ResetPassword from "./Components/ResetPassword/index.js";
 function App() {
   const dispatch = useDispatch();
 
-  const url = "http://18.223.43.173:3001/api/products";
+  const url = "http://3.144.43.94:3001/api/products";
 
   useEffect(() => {
     fetchAPI();

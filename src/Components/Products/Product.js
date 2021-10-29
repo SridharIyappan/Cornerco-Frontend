@@ -107,6 +107,7 @@ const Products = () => {
       <div className="row-col-6">
         {productData
           .filter((item) => item.category === "vitamins")
+          .slice(0, 6)
           .map((filteredItem) => (
             <div key={filteredItem._id}>
               <Link
@@ -115,7 +116,7 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
+                  src={"http://3.144.43.94:3001/" + filteredItem.avatar}
                   className="item-image"
                   alt={filteredItem.productName}
                 />
@@ -136,6 +137,7 @@ const Products = () => {
       <div className="row-col-6">
         {productData
           .filter((item) => item.category === "oil")
+          .slice(0, 6)
           .map((filteredItem) => (
             <div key={filteredItem._id}>
               <Link
@@ -144,7 +146,7 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
+                  src={"http://3.144.43.94:3001/" + filteredItem.avatar}
                   className="item-image"
                   alt={filteredItem.productName}
                 />
@@ -165,6 +167,7 @@ const Products = () => {
       <div className="row-col-6">
         {productData
           .filter((item) => item.category === "book")
+          .slice(0, 6)
           .map((filteredItem) => (
             <div key={filteredItem._id}>
               <Link
@@ -173,7 +176,7 @@ const Products = () => {
                 className="product-link"
               >
                 <img
-                  src={"http://18.223.43.173:3001/" + filteredItem.avatar}
+                  src={"http://3.144.43.94:3001/" + filteredItem.avatar}
                   className="item-image"
                   alt={filteredItem.productName}
                 />

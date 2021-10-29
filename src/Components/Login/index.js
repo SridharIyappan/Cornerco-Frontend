@@ -4,7 +4,11 @@ import { useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { getForgetUser, getForgetUserId, getUser } from "../Redux/reduxCart/cartActions";
+import {
+  getForgetUser,
+  getForgetUserId,
+  getUser,
+} from "../Redux/reduxCart/cartActions";
 // import user from '../../Redux/reduxCart/cartActions';
 
 import whiteTextLogo from "../../images/whiteTextLogo.png";
@@ -20,8 +24,8 @@ const Login = () => {
   const [emailFailed, setEmailFailed] = useState(false);
   const [passwordFailed, setPasswordFailed] = useState(false);
   const [loginFailed, setLoginFailed] = useState(false);
-  const [filtered, setFiltered] = useState(); 
-  const [userId, setUserID] = useState();
+  // const [filtered, setFiltered] = useState();
+  // const [userId, setUserID] = useState();
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -41,7 +45,7 @@ const Login = () => {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const login = await axios.get("http://18.223.43.173:3001/api/users");
+      const login = await axios.get("http://3.144.43.94:3001/api/users");
       const loginData = login.data;
       loginData.map((log) => {
         if (log.email === loginEmail && log.password === loginPassword) {
@@ -49,7 +53,7 @@ const Login = () => {
           dispatch(getUser(loginEmail, log.userName));
         } else if (log.email === loginEmail) {
           setPasswordFailed(true);
-          setLoginPassword('')
+          setLoginPassword("");
         } else if (log.password === loginPassword) {
           setEmailFailed(true);
         } else {
@@ -64,40 +68,35 @@ const Login = () => {
   };
 
   const forgetPassword = async () => {
-
     const email = loginEmail;
     const num = Math.floor(1000 + Math.random() * 9000);
     try {
       await axios({
         method: "post",
-        url: "http://localhost:3001/api/otp",
+        url: "http://3.144.43.94:3001/api/otp",
         data: {
           otp: num,
           email: email,
         },
-      })
-        .then(async () => {
-          try {
-            const getOtp = await axios.get("http://localhost:3001/api/otp");
-            const getuser = await axios.get("http://localhost:3001/api/users");
-            const otpData = getOtp.data;
-            const userData = getuser.data;
-            setFiltered(otpData.filter((datas) => datas.email === email));
-            setUserID(userData.filter((datas) => datas.email === email));
-          } catch (err) {
-            console.log(err);
-            console.log('error');
-          }
-        })
-        .then(
-          filtered.map((data => {
-            dispatch(getForgetUser(data.email, data.otp, data._id));
-          })),
-          userId.map(id => {
-            dispatch(getForgetUserId(id._id))
-          })
-        )
-        .then(history.push("/enter-otp"));
+      });
+      try {
+        const getOtp = await axios.get("http://3.144.43.94:3001/api/otp");
+        const getuser = await axios.get("http://3.144.43.94:3001/api/users");
+        const otpData = getOtp.data;
+        const userData = getuser.data;
+        const filtered = otpData.filter((datas) => datas.email === email);
+        const userId = userData.filter((datas) => datas.email === email);
+        filtered.map((data) => {
+          dispatch(getForgetUser(data.email, data.otp, data._id));
+        });
+        userId.map((id) => {
+          dispatch(getForgetUserId(id._id));
+        });
+        history.push("/enter-otp");
+      } catch (err) {
+        console.log(err);
+        console.log("error");
+      }
     } catch (err) {
       console.log(err);
     }

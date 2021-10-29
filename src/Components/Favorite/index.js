@@ -20,7 +20,7 @@ const FavoriteProducts = () => {
           {reduxProduct.map((data) => (
             <div className="favorite-map">
               <img
-                src={"http://18.223.43.173:3001/" + data.avatar}
+                src={"http://3.144.43.94:3001/" + data.avatar}
                 className="cart-product-image"
                 alt={data.avatar}
               />

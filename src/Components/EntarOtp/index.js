@@ -15,7 +15,7 @@ const EnterOtp = () => {
     e.preventDefault();
     try {
       const otpGet = await axios.get(
-        `http://localhost:3001/api/otp/${forgetId}`
+        `http://3.144.43.94:3001/api/otp/${forgetId}`
       );
       const otpData = otpGet.data;
       console.log(otpData);
