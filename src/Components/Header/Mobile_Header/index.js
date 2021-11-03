@@ -43,8 +43,15 @@ function MobileHeader() {
     <>
       <nav className="navbar">
         <div className="nav-container">
+          <div className='_hamburger_' onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          </div>
           <div className="nav-logo">
-            <img src={whiteTextLogo} alt="CornerCo" className = "nav-logo-image"/>
+            <img
+              src='assets/header/logoWhite.png'
+              alt="CornerCo"
+              className="nav-logo-image"
+            />
           </div>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -73,7 +80,7 @@ function MobileHeader() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/blog"
+                to="/product-books"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -118,12 +125,8 @@ function MobileHeader() {
               </NavLink>
             </li>
           </ul>
-          <div className="nav-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
-          </div>
-        </div>
         {/* <div className="header-searchout"> */}
-        <div className = "header-input">
+        {/* <div className = "header-input">
           <div>
             <input
               type="text"
@@ -134,12 +137,12 @@ function MobileHeader() {
           <div className="search-icon">
             <FontAwesomeIcon icon={faSearch} />
           </div>
-        </div>
+        </div> */}
         <div className="Header__InnerDiv">
           {login ? (
             <div className="Header__IconOuter dropdown">
               <i
-                class="fa fa-user dropdown-toggle"
+                class="fa fa-user dropdown-toggle nav-user-icon"
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -157,48 +160,53 @@ function MobileHeader() {
                 <li class="dropdown-item">
                   <NavLink exact to="/my-orders" className="nav-orders">
                     <h3>
-                      <i class="fa fa-gift" aria-hidden="true"></i> My Orders
+                      <i class="fa fa-gift" aria-hidden="true"></i>My Orders
                     </h3>
                   </NavLink>
+                  </li>
+                  <hr />
+                  <li class="dropdown-item">
                   <h3>
-                    <i class="fa fa-credit-card" aria-hidden="true"></i>{" "}
-                    Transactions
+                    <i class="fa fa-credit-card" aria-hidden="true"></i>Transactions
                   </h3>
                 </li>
                 <hr />
                 <NavLink exact to="/login" className="nav-orders">
                   <li class="dropdown-item">
-                    <h3 onClick={() => signOut()}>Signout</h3>
+                    <h3 onClick={() => signOut()}><i class="fa fa-power-off" aria-hidden="true"></i>Signout</h3>
                   </li>
                 </NavLink>
               </ul>
             </div>
           ) : (
             <Link exact to="/login">
-              <div className="Header__IconOuter">
-                <i class="fa fa-user" />
+              <div className="mblHeader__IconOuter">
+              <img className='_social_'  src='assets/header/person.svg' />
               </div>
             </Link>
           )}
           <Link exact to="/cart">
-            <div className="Header__IconOuter">
-              <FontAwesomeIcon icon={faShoppingCart} />
+            <div className="mblHeader__IconOuter">
+            <img className='_social_'  src='assets/header/cart.svg' />
             </div>
           </Link>
-          <Popup
+          {/* <Popup
             trigger={
-                <div className="Header__IconOuter">
-                  <i className="fa fa-heart" aria-hidden="true"></i>
-                </div>
+              <div className="mblHeader__IconOuter">
+          <img className='_social_'  src='assets/header/heart.svg' />
+              </div>
             }
             position="bottom right"
             className="popup"
-          >
-            <FavoriteProducts />
-          </Popup>
+          > */}
+            <Link exact to="/favorite">
+            <img className='_social_'  src='assets/header/heart.svg' />
+            </Link>
+          {/* </Popup> */}
           {/* <div className="Header__IconOuter">
             <i className="fa fa-heart" aria-hidden="true"></i>
           </div> */}
+        </div>
         </div>
       </nav>
     </>

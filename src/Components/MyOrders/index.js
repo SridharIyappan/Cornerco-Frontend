@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { useEffect } from 'react';
 import './index.css'
 
 const orders = [
@@ -38,6 +40,23 @@ const orders = [
 ];
 
 const MyOrders = () => {
+  useEffect(() => {
+    getOrders();
+  }, []);
+  
+  const getOrders = async() => {
+    try {
+      const transactionApi = await axios.get(
+        "http://3.144.43.94:3001/api/transaction"
+      );
+    const transactionData = transactionApi.data;
+    transactionData.map(data => {
+      console.log(data);
+    });
+    } catch (err) {
+      console.log(err);
+    }
+  }
   return (
     <div className="MyOrders">
       <div className="my-orders">

@@ -3,12 +3,14 @@
   justify-content: space-around;
   align-items: center;
   width: 100vw;
-  height: 90px;
+  padding:24px 0px 24px 0px;
+  background-color: #181818;
+  height: 104px;
 }
 
 .Header__OuterImage {
-  height: 40px;
-  width: 180px;
+  /* height: 40px;
+  width: 180px; */
   background-attachment: fixed;
   background-size: cover;
   -webkit-user-drag: none;
@@ -25,41 +27,56 @@
   justify-content: space-evenly;
   align-items: center;
 }
-
+._Icons_{
+  width:25px;
+  height:25px;
+  color:white;
+}
 .Header__IconOuter {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 30px;
   width: 30px;
-  border: 1px solid black;
+  margin-right: 45px;
+  font-size: 16px;
+  /* border: 1px solid black; */
   border-radius: 50%;
   color: black;
 }
 
 .Header__Search {
   border: none;
+  background:transparent;
   outline: none;
   height: 35px;
-  width: 400px;
+  margin-left: 25px;
+  color: #848484;
+  font-size: 16px;
+  font-family: sans-serif;
+  /* width: 400px; */
   border-radius: 25px;
   font-size: 1.5rem;
-  color: gray;
+  /* color: gray; */
 }
 ::placeholder {
   color: gray;
 }
 .Header__Searchout {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
-  height: 35px;
-  width: 50%;
-  border: 1px solid white;
-  border-radius: 25px;
+  flex-direction: row-reverse;
+  flex-wrap:wrap;
+  height: 54px;
+  background-color: #2a2a2a;
+  /* width: 27%; */
+  flex-grow:0.2;
+  border: 1px solid #3d3d3d;
+  border-radius: 28px;
   /* -moz-box-shadow:   2px 2px 4px 5px #ccc;
    -webkit-box-shadow: 2px 2px 4px 5px #ccc; */
-  box-shadow: 1px 1px 3px 4px #ccc;
+  /* box-shadow: 1px 1px 3px 4px #ccc; */
 }
 
 .Header__SectionOuter {
@@ -67,18 +84,33 @@
   width: 100vw;
   justify-content: space-around;
   align-items: center;
-  height: 50px;
-  background-color: #f2f2f2;
+  height: 70px; 
+  background-color: #2a2a2a;
 }
-
+._navWrap_{
+  display: flex;
+  align-items: baseline;
+  width: 95%;
+  margin-left: 140px;
+    margin-right: 140px;
+}
+._Header-inner_{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-left: 140px;
+  margin-right: 140px;
+}
 .nav-link {
   font-size: 16px;
   text-decoration: none;
   display: flex;
+  font-family: sans-serif;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  border-right: 1px solid black;
+  flex-grow: 0.7;
+  /* width: 230px; */
+  /* border-right: 1px solid black; */
   text-align: center;
   cursor: pointer;
 }
@@ -95,19 +127,19 @@
 
 .active {
   color: #ed2939;
-  border-bottom: 2px solid #ed2939;
+  border-bottom: 3px solid #ed2939;
 }
-
+/* 
 .Header__SectionOuter div:nth-child(1) {
   height: 50px;
   width: 100px;
-}
+} */
 
-.Header__SectionOuter div:nth-child(7) {
+/* .Header__SectionOuter div:nth-child(7) {
   height: 50px;
   width: 100px;
   border: 0;
-}
+} */
 .Header__Chat {
   color: red;
   padding: 10px;
@@ -115,7 +147,9 @@
 
 .input-search-ic {
   position: relative;
-  left: 5rem;
+  color:white;
+  /* left: 5rem; */
+  margin-left: 25px;
   font-size: 2rem;
 }
 
@@ -123,21 +157,36 @@
   border: none;
 }
 
+.log-nav {
+  background: #3d3d3d;
+  /* color: #fefefa; */
+}
+
+#drop-down {
+  background: none;
+}
+
+.log-nav li p {
+  color: #fefefa;
+  margin-bottom: 0;
+  font-weight: 10;
+}
+
 .profile-dropdown {
   width: 25rem;
-  height: 20rem;
+  height: 15rem;
   position: relative;
   top: 8rem;
-  letter-spacing: 0.3rem;
+  /* letter-spacing: 0.3rem; */
 }
 
 .profile-dropdown li {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 .profile-dropdown hr {
-  color: #454545;
-  height: 2px;
+  color: #faecec;
+  height: 1px;
 }
 
 .nav-orders {
@@ -149,10 +198,17 @@
 .nav-orders:hover {
   color: #ed2939;
 }
-
+._headerChat_{
+margin-left: 5px;
+}
 .popup-content {
-  left: 850px !important;
-  width: 450px !important;
+  /* left: 850px !important; */
+  width: 500px !important;
+  margin: auto;
+  background:#2a2a2a;
+  /* width: 50%; */
+  padding: 5px;
+  border: 1px solid #d7d7d7;
 }
 
 .nav-link-boder {
@@ -164,4 +220,16 @@
   width: 200px;
   text-align: center;
   cursor: pointer;
+}
+
+ul li p {
+  font-size: 12px;
+}
+
+ul li p i {
+  padding-right: 5px;
+}
+
+.nav-user-icon {
+  color: #fefefa;
 }

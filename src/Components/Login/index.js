@@ -4,19 +4,17 @@ import { useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import {
-  getForgetUser,
-  getForgetUserId,
-  getUser,
-} from "../Redux/reduxCart/cartActions";
+import { getForgetUser, getForgetUserId, getUser } from "../Redux/reduxCart/cartActions";
 // import user from '../../Redux/reduxCart/cartActions';
 
 import whiteTextLogo from "../../images/whiteTextLogo.png";
 import CornercoGif from "../../images/cornerco-gif-temp.gif";
+import facebook from '../../icons/social-media-icons/fb.png';
+import google from '../../icons/social-media-icons/google.png';
 
 import "./index.css";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
-
+  
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -24,8 +22,8 @@ const Login = () => {
   const [emailFailed, setEmailFailed] = useState(false);
   const [passwordFailed, setPasswordFailed] = useState(false);
   const [loginFailed, setLoginFailed] = useState(false);
-  // const [filtered, setFiltered] = useState();
-  // const [userId, setUserID] = useState();
+  const [filtered, setFiltered] = useState(); 
+  const [userId, setUserID] = useState();
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -50,10 +48,10 @@ const Login = () => {
       loginData.map((log) => {
         if (log.email === loginEmail && log.password === loginPassword) {
           history.push("/");
-          dispatch(getUser(loginEmail, log.userName));
+          dispatch(getUser(loginEmail, log.userName, log._id));
         } else if (log.email === loginEmail) {
           setPasswordFailed(true);
-          setLoginPassword("");
+          setLoginPassword('')
         } else if (log.password === loginPassword) {
           setEmailFailed(true);
         } else {
@@ -68,6 +66,7 @@ const Login = () => {
   };
 
   const forgetPassword = async () => {
+
     const email = loginEmail;
     const num = Math.floor(1000 + Math.random() * 9000);
     try {
@@ -78,25 +77,31 @@ const Login = () => {
           otp: num,
           email: email,
         },
-      });
-      try {
-        const getOtp = await axios.get("http://3.144.43.94:3001/api/otp");
-        const getuser = await axios.get("http://3.144.43.94:3001/api/users");
-        const otpData = getOtp.data;
-        const userData = getuser.data;
-        const filtered = otpData.filter((datas) => datas.email === email);
-        const userId = userData.filter((datas) => datas.email === email);
-        filtered.map((data) => {
-          dispatch(getForgetUser(data.email, data.otp, data._id));
-        });
-        userId.map((id) => {
-          dispatch(getForgetUserId(id._id));
-        });
-        history.push("/enter-otp");
-      } catch (err) {
-        console.log(err);
-        console.log("error");
-      }
+      })
+        .then(async () => {
+          try {
+            const getOtp = await axios.get("http://3.144.43.94:3001/api/otp");
+            const getuser = await axios.get(
+              "http://3.144.43.94:3001/api/users"
+            );
+            const otpData = getOtp.data;
+            const userData = getuser.data;
+            setFiltered(otpData.filter((datas) => datas.email === email));
+            setUserID(userData.filter((datas) => datas.email === email));
+          } catch (err) {
+            console.log(err);
+            console.log("error");
+          }
+        })
+        .then(
+          filtered.map((data) => {
+            dispatch(getForgetUser(data.email, data.otp, data._id));
+          }),
+          userId.map((id) => {
+            dispatch(getForgetUserId(id._id));
+          })
+        )
+        .then(history.push("/enter-otp"));
     } catch (err) {
       console.log(err);
     }
@@ -105,7 +110,7 @@ const Login = () => {
   return (
     <div className="Login">
       <div className="left">
-        <img src={whiteTextLogo} alt="logo-missing" />
+        {/* <img src={whiteTextLogo} alt="logo-missing" /> */}
         <h2>Welcome Back!</h2>
         <p>Login to your account now</p>
         {passwordFailed && <p className="red">Password Incorrect</p>}
@@ -142,12 +147,18 @@ const Login = () => {
             LOGIN
           </button>
         </form>
+        <h5 className = "login-or">or</h5>
+        <hr />
         <h3>
           <span>Don't have an account?</span>
           <NavLink exact to="/register">
             Register
           </NavLink>
         </h3>
+        <h4>
+          <img src = { facebook } className = "login-fb" alt = "fb-log-missing" />
+          <img src = { google } className = "login-google" alt = "google-log-missing" />
+        </h4>
       </div>
       <div className="right">
         <img src={CornercoGif} alt="gif-missing" />

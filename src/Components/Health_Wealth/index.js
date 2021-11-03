@@ -10,7 +10,6 @@ const HealthAndWealth = () => {
   return (
     <div
       className="HealthWealth"
-      style={{ backgroundImage: `url(${BackGround})` }}
     >
       <h3>Health & Wealth</h3>
       <div className="health-wealth">

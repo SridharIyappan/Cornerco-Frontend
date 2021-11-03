@@ -1,17 +1,26 @@
-.Favorite-Products {
-    background: #454545;
-    min-height: 100vh;
-    padding: 2rem;
+._FavoriteProducts_ {
+    background: #2a2a2a;
+    /* min-height: 100vh; */
+    margin: 36px;
 }
 
-.Favorite-Products h4 {
-    font-size: 3.3rem;
-    text-align: center;
-    color: #fefefa;
-    position: relative;
-    top: 2.4rem;
+._FavoriteProducts_ h4 {
+    /* text-align: center; */
+    display: block;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: sans-serif;
 }
+._mblfavQty_{
 
+        width: 30%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+  
+}
 .Favorite-Products .favorite-map{
     display: grid;
     grid-template-columns:repeat(2, 1fr);
@@ -44,6 +53,66 @@
     color: #fefefa;
     font-size: 1.4rem;
 }
+
+
+    ._favProduct_ {
+      display: flex;
+      margin-bottom: 15px;
+      height: 107px;
+      background: #2a2a2a;
+    }
+    ._favPrice_ {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 500;
+      font-family: sans-serif;
+    }
+    ._favQtyNumber_{
+        margin:0px 15px 0px 15px;
+        color: #fff;
+        font-size: 12px;
+        font-family: sans-serif;
+    }
+    ._favqtyControl_{
+        width: 24px;
+        height: 24px;
+    }
+    ._favQty_{
+      width: 50%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    ._favproductName_ {
+      color: #b9b9b9;
+      font-family: sans-serif;
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+    ._favPriceSection_ {
+      margin-left: 12px;
+    }
+    ._favProductImage_ {
+      width: 87px;
+      height: 87px;
+    }
+    ._favCart_ {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      width: 75%;
+    }
+    ._favInner_{
+        margin-bottom: 30px;
+    }
+    ._favWrap_ {
+      padding: 25px;
+      display: block;
+      min-height: 900px;
+      background: #181818;
+    }
+  
+
 
 @media only screen and (max-width: 600px) {
     .Favorite-Products div {

@@ -13,7 +13,7 @@ import Vitamins from "./Components/Products/ProductList/Vitamins/index.js";
 import EssentialOils from "./Components/Products/ProductList/Oils/index.js";
 import Books from "./Components/Products/ProductList/Books/index.js";
 import Cart from "./Components/Cart/index.js";
-import FavoriteProducts from "./Components/Favorite/index.js";
+import MobileFavorites from "./Components/Favorite/MobileFavorites";
 import Login from "./Components/Login/index.js";
 import Regiester from "./Components/Register/index.js";
 
@@ -23,7 +23,7 @@ import { useDispatch } from "react-redux";
 import { setProducts } from "./Components/Redux/reduxCart/cartActions.js";
 import MyOrders from "./Components/MyOrders/index.js";
 import { Popper } from "./Components/pop.js";
-import HealthAndWealth from "./Components/Health&Wealth/index.js";
+import HealthAndWealth from "./Components/Health_Wealth/index.js";
 import Community from "./Components/Community/index.js";
 import Resources from "./Components/Resources/index.js";
 import EnterOtp from "./Components/EntarOtp/index.js";
@@ -61,7 +61,7 @@ function App() {
         <Route exact path="/product-essential-oils" component={EssentialOils} />
         <Route exact path="/product-books" component={Books} />
         <Route exact path="/cart" component={Cart} />
-         {/* <Route exact path = "/favorite" component ={FavoriteProducts} />  */}
+         <Route exact path = "/favorite" component ={MobileFavorites} /> 
          <Route exact path="/my-orders" component={MyOrders} />
         <Route exact path="/popper" component={Popper} />
         <Route exact path="/health-wealth" component={HealthAndWealth} />

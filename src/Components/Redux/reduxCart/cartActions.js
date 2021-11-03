@@ -64,12 +64,13 @@ export const loadCurrentItem = (item) => {
     };
 };
 
-export const getUser = (email, name) => {
+export const getUser = (email, name, id) => {
     return {
         type: actionTypes.GET_USER,
         payload: {
             email,
-            name
+            name, 
+            id
         }
     }
 }

@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCog,
   faUserAlt,
+  faHeart,
   faShoppingCart,
   faSearch,
   faComments,
@@ -45,11 +46,16 @@ const PcHeader = () => {
   return (
     <div>
       <div className="Header__OuterDiv">
+        {/* <div className='_Header-inner_'> */}
+          <div className='_logo_'>
+            <Link exact to = "/">
         <img
-          src={whiteTextLogo}
+        src='assets/header/logoWhite.png'
           alt="CornerCo"
           className="Header__OuterImage"
         />
+        </Link>
+        </div>
         <div className="Header__Searchout">
           <div>
             <input
@@ -59,44 +65,53 @@ const PcHeader = () => {
             />
           </div>
           <div className="input-search-ic">
-            <FontAwesomeIcon icon={faSearch} />
+          <img className='_social_'  src='assets/header/search.svg' />
           </div>
         </div>
 
         <div className="Header__InnerDiv">
           {login ? (
             <div className="Header__IconOuter dropdown">
-              <i
-                class="fa fa-user dropdown-toggle"
+               <img className='_social_'  src='assets/header/person.svg' id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                aria-hidden="true" />
+              {/* <i
+                class="fa fa-user dropdown-toggle nav-user-icon "
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 aria-hidden="true"
-              ></i>
+              ></i> */}
               <ul
-                class="dropdown-menu profile-dropdown"
+                class="dropdown-menu profile-dropdown log-nav"
                 aria-labelledby="dropdownMenuButton1"
               >
-                <li class="dropdown-item">
-                  <h3>{user.name}</h3>
-                  <h3>{user.email}</h3>
+                <li class="dropdown-item" id="drop-down">
+                  <p>{user.name}</p>
+                  <p>{user.email}</p>
                 </li>
                 <hr />
-                <li class="dropdown-item">
+                <li class="dropdown-item" id="drop-down">
                   <NavLink exact to="/my-orders" className="nav-orders">
-                    <h3>
-                      <i class="fa fa-gift" aria-hidden="true"></i> My Orders
-                    </h3>
+                    <p>
+                      <i class="fa fa-gift" aria-hidden="true"></i>My Orders
+                    </p>
                   </NavLink>
+                </li>
+                <hr />
+                {/* <li class="dropdown-item">
                   <h3>
-                    <i class="fa fa-credit-card" aria-hidden="true"></i>{" "}
+                    <i class="fa fa-credit-card" aria-hidden="true"></i>
                     Transactions
                   </h3>
                 </li>
-                <hr />
+                <hr /> */}
                 <NavLink exact to="/login" className="nav-orders">
-                  <li class="dropdown-item">
-                    <h3 onClick={() => signOut()}>Signout</h3>
+                  <li class="dropdown-item" id="drop-down">
+                    <p onClick={() => signOut()}>
+                      <i class="fa fa-power-off" aria-hidden="true"></i> Signout
+                    </p>
                   </li>
                 </NavLink>
               </ul>
@@ -104,20 +119,27 @@ const PcHeader = () => {
           ) : (
             <Link exact to="/login">
               <div className="Header__IconOuter">
-                <i class="fa fa-user" />
+                {/* <FontAwesomeIcon className='_Icons_' icon={faUserAlt} /> */}
+                <img className='_social_'  src='assets/header/person.svg' />
               </div>
             </Link>
           )}
           <Link exact to="/cart">
             <div className="Header__IconOuter">
-              <FontAwesomeIcon icon={faShoppingCart} />
+              {/* <FontAwesomeIcon className='_Icons_'  icon={faShoppingCart} /> */}
+              <img className='_social_'  src='assets/header/cart.svg' />
+
             </div>
           </Link>
           <Popup
             trigger={
               // <Link exact to="/favorite">
               <div className="Header__IconOuter">
-                <i className="fa fa-heart" aria-hidden="true"></i>
+                {/* <i className="fa fa-heart" aria-hidden="true"></i> */}
+                {/* <FontAwesomeIcon className='_Icons_'   icon={faHeart} /> */}
+                <img className='_social_'  src='assets/header/heart.svg' />
+
+
               </div>
               // </Link>
             }
@@ -128,9 +150,11 @@ const PcHeader = () => {
             <FavoriteProducts />
           </Popup>
         </div>
+        {/* </div> */}
       </div>
 
       <div className="Header__SectionOuter">
+        <div className='_navWrap_'>
         <div className="nav-link">
           <NavLink
             exact
@@ -151,14 +175,14 @@ const PcHeader = () => {
             className="nav-links"
             onClick={handleClick}
           >
-            Product
+            Products
           </NavLink>
         </div>
 
         <div className="nav-link">
           <NavLink
             exact
-            to="/books"
+            to="/product-books"
             activeClassName="active"
             className="nav-links"
             onClick={handleClick}
@@ -186,12 +210,13 @@ const PcHeader = () => {
             onClick={handleClick}
           >
             Community
+{/* <img className='c' src='assets/header/chat.svg'/> */}
           </NavLink>
           <span className="Header__Chat">
             <FontAwesomeIcon icon={faComments} size="2x" />
           </span>
         </div>
-        <div className="nav-link-boder">
+        <div className="nav-link">
           <NavLink
             exact
             to="/resources"
@@ -202,6 +227,7 @@ const PcHeader = () => {
             Resources
           </NavLink>
         </div>
+      </div>
       </div>
     </div>
   );

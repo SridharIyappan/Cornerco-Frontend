@@ -5,6 +5,11 @@
   top: 5rem;
   left: 3rem;
 }
+.Resources{
+  background: #181818;
+  font-family: sans-serif;
+  padding: 0 10%; 
+}
 .Resources .resources-section-1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

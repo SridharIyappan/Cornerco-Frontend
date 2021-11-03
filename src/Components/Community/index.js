@@ -9,7 +9,6 @@ const Community = () => {
   return (
     <div
       className="Community"
-      style={{ backgroundImage: `url(${BackGround})` }}
     >
       <h3>Community</h3>
       <div className="community-section-1">

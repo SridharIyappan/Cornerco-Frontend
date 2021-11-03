@@ -5,6 +5,11 @@
   top: 5rem;
   left: 3rem;
 }
+.Community{
+  background: #181818;
+  font-family: sans-serif;
+  padding: 0 0 20px 10%;
+}
 .Community .community-section-1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

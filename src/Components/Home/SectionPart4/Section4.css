@@ -1,90 +1,268 @@
-.Section4__sideCard{
-    /* height: 150px; */
-    width: 400px;
-    display: flex;
-    justify-content: space-around;
+.Section4__sideCard {
+  /* height: 150px;  */
+  width: 50%;
+  display: flex;
+  /* justify-content: space-around;
     align-items: center;
-    margin: 4rem;
+    margin: 4rem 70px 4rem 0px; */
+}
+._sec4Top_ {
+  color: #fff;
+  font-size: 34px;
+}
+._sec4_ {
+  display: flex;
+  color: "#fff";
+}
+.Section4__Main {
+  /* height: 500px;  */
+  width: 100vw;
+  padding-left: 140px;
+  padding-right: 140px;
+  flex-direction: column;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  background-size: 100% 100%;
+  opacity: 0.8;
+}
+._section4Heading_ {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+._section4Wrap_ {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.Section4__Inner {
+  height: 630px;
+  width: 1470px;
+  float: left;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-.Section4__Main{
-    /* height: 500px; */
+.Section4__CardInnerPart {
+  display: flex;
+  font-family: sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 300px;
+}
+
+.Section4__CardImage {
+  border-radius: 5px;
+  margin-right: 30px;
+  /* height: 255px; */
+  height: 215px;
+  width: 300px;
+}
+._title_ {
+  width: 250px;
+  font-size: 22px;
+  color: #ffffff;
+  font-family: sans-serif;
+  line-height: 1.82;
+}
+._wrapper4inner_ {
+  display: flex;
+  width: 100%;
+}
+._description_ {
+  color: #b9b9b9;
+  font-size: 20px;
+  width: 70%;
+  font-weight: 300;
+}
+/* .Section4__CardInnerPart :nth-child(1){
+    font-size: 15px;
+} */
+
+.Section4__Ad {
+  /* height: 300px; */
+  /* width: 20%; */
+  float: right;
+}
+
+.Section4__Image {
+  height: 630px;
+  /* width: 100px; */
+}
+
+.Section4__InnerTop {
+  /* height: 30px; */
+  width: 70%;
+  position: relative;
+  font-size: 34px;
+  margin-bottom: 40px;
+  font-weight: 500;
+  left: 280px;
+  top: 20px;
+  font-family: sans-serif;
+  color: white;
+}
+
+@media only screen and (max-width: 1600px) {
+  .Section4__Main {
+    /* height: 500
+    px
+    ; */
     width: 100vw;
+    padding-left: 50px;
+    padding-right: 50px;
+    flex-direction: column;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     background-repeat: no-repeat;
     background-size: contain, cover;
     background-size: 100% 100%;
     opacity: 0.8;
-}
-
-.Section4__Inner{
-    /* height: 500px; */
-    width: 80%;
-    float: left;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items:center;
-}
-
-.Section4__CardInnerPart{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.Section4__CardInnerPart >p{
-    font-size: 14px;
-    text-align: justify;
-    line-height: 1;
-    max-width: 25ch;
-    font-weight: bold;
-    color: white;
-}
-
-.Section4__CardImage{
-    border-radius: 15px;
-}
-
-.Section4__CardInnerPart :nth-child(1){
-    font-size: 15px;
-}
-
-.Section4__Ad{
-    /* height: 300px; */
-    /* width: 20%; */
-    float: right;
-}
-
-.Section4__Image{
-    /* height: 300px; */
-    width: 100px;
-}
-
-.Section4__InnerTop{
+  }
+  .Section4__InnerTop {
     /* height: 30px; */
     width: 70%;
     position: relative;
-    left: 90px;
-    top:20px;
-    color:white;
+    font-size: 34px;
+    /* margin-bottom: unset; */
+    font-weight: 500;
+    left: unset;
+    top: 20px;
+    font-family: sans-serif;
+    color: white;
+  }
+  .Section4__Inner {
+    height: unset;
+    width: 100%;
+    flex-direction: row;
+    float: left;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    align-items: center;
+  }
 }
 
-@media only screen and (max-width: 600px) {
-    .Section4__sideCard{
-        margin: 4rem 0;
-    }
-    .Section4__CardInnerPart {
-        margin-left: 18px;
-    }
-    .Section4__Main{
-        flex-direction: column;
-    }
-    .Section4__Image{
-        width: 150px;
-        padding-bottom: 10px;
-    }
+@media only screen and (max-width: 1200px) {
+  ._wrapper4inner_ {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  ._section4Wrap_ {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .Section4__Inner {
+    height: unset;
+    width: 100%;
+    flex-direction: column;
+    flex-direction: column;
+    float: left;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+  }
+  .Section4__sideCard {
+    height: unset;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: unset;
+    align-items: unset;
+  }
+  .Section4__CardImage {
+    border-radius: 5px;
+    margin-right: 30px;
+    height: 175px;
+  }
+  .Section4__CardInnerPart {
+    display: flex;
+    font-family: sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .Section4__Ad {
+    display: none;
+  }
+  .Section4__Main {
+    width: 100vw;
+    padding-left: 50px;
+    padding-right: 50px;
+    flex-direction: column;
+    display: flex;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+    background-size: 100% 100%;
+    opacity: 0.8;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .Section4__Main {
+    width: 100vw;
+    padding-left: 25px;
+    padding-right: 25px;
+    flex-direction: column;
+    display: flex;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+    background-size: 100% 100%;
+    opacity: 0.8;
+  }
+  .Section4__Inner {
+    height: unset;
+    width: 100%;
+    flex-direction: column;
+    flex-direction: column;
+    float: left;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+  }
+  ._section4Heading_ {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  .Section4__CardImage {
+    border-radius: 5px;
+    margin-right: unset;
+    margin-bottom: 30px;
+    height: 255px;
+  }
+  .Section4__InnerTop {
+    /* height: 30px; */
+    width: 70%;
+    position: relative;
+    font-size: 34px;
+    margin-bottom: unset;
+    font-weight: 500;
+    left: unset;
+    top: 20px;
+    font-family: sans-serif;
+    color: white;
+  }
 }

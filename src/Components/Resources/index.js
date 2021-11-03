@@ -9,7 +9,6 @@ const Resources = () => {
   return (
     <div
       className="Resources"
-      style={{ backgroundImage: `url(${BackGround})` }}
     >
       <h3>Resources</h3>
       <div className="resources-section-1">

@@ -7,6 +7,7 @@ import "./index.css";
 const ResetPassword = () => {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const id = useSelector((state) => state.cart.forgetUserId.id);
   const history = useHistory();
@@ -23,9 +24,8 @@ const ResetPassword = () => {
 
   const resetPassword = async (e) => {
     e.preventDefault();
-    let confirmPassword = '';
     if (password === rePassword) {
-      confirmPassword = password;
+      setConfirmPassword(password);
     } else {
       console.log("password mismatch");
     }

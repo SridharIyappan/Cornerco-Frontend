@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow-x: hidden;
+    overflow-y: hidden;
+    height: 700px;
 }
 
 .Register .left {
@@ -16,6 +18,24 @@
     font-size: 3rem;
     font-weight: 600;
     color: rgb(85, 82, 82);
+}
+
+.Register hr {
+    color: #fddede;
+    position: relative;
+    top: 10rem;
+    width: 600px;
+}
+
+.Register h5 {
+    position: relative;
+    top: 7rem;
+    text-align: center;
+    right: 6rem;
+    left: 26rem;
+    border: 2px solid #fefefa;
+    width: 40px;
+    background: #fefefa;
 }
 
 .Register .left p{
@@ -48,7 +68,7 @@
 
 .Register .left form .register-input {
     border: 1px solid #b8b8b8;
-    height: 3rem;
+    height: 4rem;
     width: 94%;
     font-size: 1.6rem;
     padding-left: 1.5rem;
@@ -68,13 +88,15 @@
     padding: 7px 35px;
     cursor: pointer;
     outline: none;
-    background: linear-gradient(0deg, #dd343a 25%, #e0323e 25%, #ed2939 50%);
+    background: #454545;
     color: #fefefa;
     font-size: 18px;
     border-radius: 25px;
     text-transform: uppercase;
     margin-top: 2rem;
-    width: 95%;
+    width: 60%;
+    position: relative;
+    left: 10rem;
 }
 
 .Register .left form h4 {
@@ -94,8 +116,9 @@
 
 .Register .left h3 {
     position: relative;
-    top: 18rem;
+    top: 10rem;
     left: 15rem;
+    padding-bottom: 2rem;
 }
 
 .Register .left h3 span{
@@ -105,10 +128,11 @@
 .Register .right {
     display: grid;
     grid-template-columns: 1fr;
-    background: linear-gradient(0deg, #dd343a 25%, #e0323e 25%, #ed2939 50%);
-    height: 100vh;
+    background: #454545;
+    /* height: 100vh; */
     align-items: center;
     justify-items: center;
+    height: 700px;
 }
 
 .Register .right img{
@@ -117,19 +141,63 @@
     top: 3rem;
 }
 
+.Register h4 {
+    position: relative;
+    left: 0.8rem;
+    top: 10rem;
+}
+
+.Register .reg-fb {
+    width: 35%;
+}
+
+.Register .reg-google {
+    width: 35%;
+}
+
+.Register .policy {
+    font-size: 1.2rem;
+    position: relative;
+    left: 8rem !important;
+}
 
 @media only screen and (max-width: 600px) {
     .Register {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        height: 130rem;
     }
     .Register .left {
-        height: 60rem;
+        height: 70rem;
+        width: 75%;
     }
     .Register .left h3 {
         position: relative;
         top: 8rem;
         left: 8rem;
+    }
+    .Register .left form .register-form { 
+        left: 11rem;
+        width: 18rem;
+        height: 4rem;
+        padding: 5px 5px;
+    }
+    
+    .Register .policy { 
+        left: 2rem !important;
+    }
+    
+    .Register h5 {
+        left: 18rem;
+    }
+    .Register .right {
+        height: 60rem;
+    }
+    .Register .right img {
+        width: 40%;
+        position: relative;
+        top: 3rem;
+        right: 11rem;
     }
 }
 

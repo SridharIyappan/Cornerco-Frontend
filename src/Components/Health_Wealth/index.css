@@ -1,5 +1,8 @@
 .HealthWealth {
     overflow-x: hidden;
+    background: #181818;
+    font-family: sans-serif;
+    padding: 0 10%;
 }
 .health-wealth {
   display: grid;

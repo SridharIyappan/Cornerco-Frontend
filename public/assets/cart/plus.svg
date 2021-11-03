@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="Group_26" data-name="Group 26" transform="translate(-350 -137)">
+        <circle id="Ellipse_10" data-name="Ellipse 10" cx="12" cy="12" r="12" transform="translate(350 137)" style="fill:#ed2424"/>
+        <g id="vuesax_outline_add" data-name="vuesax/outline/add" transform="translate(351.647 139)">
+            <g id="add">
+                <path id="Vector" class="cls-2" d="M11 1.294H.647A.652.652 0 0 1 0 .647.652.652 0 0 1 .647 0H11a.652.652 0 0 1 .647.647.652.652 0 0 1-.647.647z" transform="translate(4.529 9.706)"/>
+                <path id="Vector-2" data-name="Vector" class="cls-2" d="M.647 11.647A.652.652 0 0 1 0 11V.647A.652.652 0 0 1 .647 0a.652.652 0 0 1 .647.647V11a.652.652 0 0 1-.647.647z" transform="translate(9.706 4.529)"/>
+            </g>
+        </g>
+    </g>
+</svg>
